@@ -2,7 +2,7 @@ type = "agent"
 name = "sandboxing-agent"
 
 # Preload model access for better performance
-models = ["gpt-4-1"]
+models = ["claude-sonnet-4-5-20250929"]
 
 [runtime]
 generation = "mk3"
