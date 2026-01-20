@@ -9,6 +9,8 @@ dependencies = [
     "asgi-correlation-id>=4.3.4",
     "blaxel[telemetry]==0.2.32",
     "fastapi[standard]>=0.115.12",
+    "pydantic-ai>=1.0.0",
+    "mcp<1.24.0",
     "rich>=13.9.4",
 ]
 [dependency-groups]

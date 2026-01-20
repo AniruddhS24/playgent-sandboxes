@@ -1,26 +1,87 @@
 import os
+import logging
 from contextlib import asynccontextmanager
 from logging import getLogger
 
+import httpx
 from blaxel.core import SandboxInstance
-# from blaxel.pydantic import bl_tools
+from pydantic_ai import Agent, Tool
+from pydantic_ai.mcp import MCPServerStreamableHTTP
 from fastapi import FastAPI, Request
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 logger = getLogger(__name__)
+logging.getLogger("mcp.client").setLevel(logging.DEBUG)
+logging.getLogger("pydantic_ai").setLevel(logging.DEBUG)
 
-SYSTEM_PROMPT = """You are a coding assistant that can write and execute code in a sandbox environment.
+SYSTEM_PROMPT = """You are a coding agent that can write, edit, and execute TypeScript/JavaScript code in a Node.js sandbox environment.
 
-You have access to two tools:
-1. write_file - Write code or content to files in the sandbox
-2. execute_command - Run shell commands (e.g., python script.py, pip install, etc.)
+## Environment
+- **Runtime**: Node.js with TypeScript support
+- **Package Manager**: npm/pnpm available
+- **Primary Languages**: TypeScript (.ts), JavaScript (.js)
+- **Working Directory**: /blaxel
 
-When asked to write and run code:
-1. First write the code to a file using write_file
-2. Then execute it using execute_command
+## Available Tools via MCP
 
-Be concise and helpful. After executing code, summarize the results."""
+### File Operations:
+- **fsReadFile** - Read file contents
+- **fsWriteFile** - Create or update entire files
+- **fsListDirectory** - List directory contents
+- **codegenListDir** - Directory listing (optimized for codegen)
+
+### Intelligent Code Editing:
+- **codegenEditFile** - Apply targeted edits to existing files (RECOMMENDED for modifications)
+  - Uses AI-powered editing (Relace backend)
+  - Much faster than rewriting entire files
+  - Format: Provide clear instructions like "add a function to calculate circle area"
+- **codegenParallelApply** - Apply same edit across multiple files
+- **codegenReapply** - Retry failed edits
+
+### Code Search & Discovery:
+- **codegenFileSearch** - Fast filename matching
+- **codegenGrepSearch** - Pattern/text search in files
+- **codegenCodebaseSearch** - Semantic code search
+- **codegenReadFileRange** - Read specific line ranges (max 250 lines)
+- **codegenRerank** - Semantic reranking of search results
+
+### Execution:
+- **processExecute** - Run shell commands, npm scripts, or node programs
+  - Examples: `npm install`, `node script.js`, `tsc --noEmit`
+
+### Other Tools:
+- **fetch_data** - Fetch data from external databases (placeholder)
+
+## Workflow
+1. **Search & Read**: Use codegen search tools to understand existing code structure
+2. **Edit Efficiently**: Prefer `codegenEditFile` for modifications over full rewrites
+3. **Write New Files**: Use `fsWriteFile` only for new files
+4. **Execute & Test**: Run code with `processExecute` (e.g., `node file.js`, `npm test`)
+5. **Iterate**: Fix errors by reading output and applying targeted edits
+
+## Best Practices
+- **Always use TypeScript/JavaScript** - This is a Node.js environment
+- **Use targeted edits** - `codegenEditFile` is faster than rewriting files
+- **Test your code** - Execute and verify output
+- **Install dependencies** - Use `npm install <package>` when needed
+
+Be concise and iterate until the task is complete."""
+
+
+def fetch_data(query: str) -> str:
+    """Fetch data from external database.
+
+    Args:
+        query: The query to fetch data for
+
+    Returns:
+        The fetched data as a string
+    """
+    # TODO: Implement actual database fetching
+    return f"TODO: fetch data for query: {query}"
 
 
 @asynccontextmanager
@@ -39,7 +100,6 @@ async def log_request(request: Request, call_next):
     response = await call_next(request)
     return response
 
-# Main inference endpoitn
 @app.post("/")
 async def handle_request(request: Request):
     body = await request.json()
@@ -47,33 +107,51 @@ async def handle_request(request: Request):
 
     if not user_message:
         return {"response": "Please provide an input message"}
-
-    # Create or get sandbox
-    sandbox = await SandboxInstance.create_if_not_exists({
-        "name": "coding-agent-sandbox-testing",
-        "image": "blaxel/base-image:latest",
-        "memory": 4096,
-    })
-
-    files = [
-        {"path": "src/gmail_api.py", "content": "<put the file content>"},
-        {"path": "src/runner.py", "content": "<file content>"}
-    ]
-    await sandbox.fs.write_tree(files, "/blaxel/app")
-
-
-    # model = await bl_model("claude-sonnet-4-5-20250929")
-    # codegen_tools = await bl_tools([f"sandboxes/{sandbox.metadata.name}"])
     
-    # Agent loop
-    while True:
-        # Run the model given user_message and a system prompt (need to write)
-        # Get the model's code-gen output
-        result = sandbox.process.exec("python3 src/runner.py")
-        # if result == "success"
-        break
+    sandbox = await SandboxInstance.create_if_not_exists({
+        "name": "playgent-coding-sandbox-ts",
+        "image": "blaxel/ts-app:latest",
+        "memory": 4096,
+        "ports": [
+            { "name": "preview", "target": 3000 }
+        ],
+        "envs": [
+            { "name": "RELACE_API_KEY", "value": os.getenv("RELACE_API_KEY") },
+        ]
+    })
+    
+    # Connect to sandbox MCP with auth (get URL from sandbox instance)
+    sandbox_url = "https://run.blaxel.ai/pharmie-agents/sandboxes/codegen-sandbox/mcp"
 
-    return {"response": "final model response"}
+    async with httpx.AsyncClient(
+        headers={"Authorization": f"Bearer {os.getenv('BLAXEL_API_KEY')}"}
+    ) as http_client:
+        logger.info(f"Creating MCP connection to sandbox at {sandbox_url}...")
+        sandbox_mcp = MCPServerStreamableHTTP(
+            sandbox_url,
+            http_client=http_client,
+        )
+
+        # Create agent with sandbox tools + custom tools
+        agent = Agent(
+            'anthropic:claude-sonnet-4-0',
+            system_prompt=SYSTEM_PROMPT,
+            toolsets=[sandbox_mcp],
+            tools=[Tool(fetch_data)],
+        )
+
+        logger.info("Entering agent context manager...")
+        async with agent:
+            # Run agent
+            logger.info(f"Running agent with message: {user_message}")
+            result = await agent.run(user_message)
+
+            # Log raw result
+            logger.info(f"Agent completed. Raw result: {result}")
+
+        logger.info("Agent context closed successfully")
+
+    return {"response": result.output}
 
 
 FastAPIInstrumentor.instrument_app(app, exclude_spans=["receive", "send"])
