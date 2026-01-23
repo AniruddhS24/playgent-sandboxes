@@ -166,3 +166,52 @@ class LLMClient:
             Current model name
         """
         return self.model
+
+    def get_context_limit(self) -> int:
+        """Get the maximum context length (in tokens) for the current model.
+
+        Returns:
+            Maximum context length in tokens
+        """
+        # Model context limits (as of 2026)
+        context_limits: Dict[str, int] = {
+            # GPT-4 models
+            "gpt-4": 8192,
+            "gpt-4-32k": 32768,
+            "gpt-4-turbo": 128000,
+            "gpt-4-turbo-preview": 128000,
+            "gpt-4-1106-preview": 128000,
+            "gpt-4-0125-preview": 128000,
+
+            # GPT-4o models
+            "gpt-4o": 128000,
+            "gpt-4o-mini": 128000,
+            "gpt-4o-2024-05-13": 128000,
+            "gpt-4o-2024-08-06": 128000,
+
+            # GPT-3.5 models
+            "gpt-3.5-turbo": 16385,
+            "gpt-3.5-turbo-16k": 16385,
+            "gpt-3.5-turbo-1106": 16385,
+            "gpt-3.5-turbo-0125": 16385,
+
+            # O1 models
+            "o1": 200000,
+            "o1-preview": 128000,
+            "o1-mini": 128000,
+
+            # GPT-5 (future-proofing)
+            "gpt-5": 128000,
+        }
+
+        # Try exact match first
+        if self.model in context_limits:
+            return context_limits[self.model]
+
+        # Try prefix matching for versioned models
+        for model_prefix, limit in context_limits.items():
+            if self.model.startswith(model_prefix):
+                return limit
+
+        # Default to conservative limit if model not found
+        return 8192

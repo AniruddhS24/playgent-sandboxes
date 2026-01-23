@@ -131,6 +131,10 @@ Each iteration uses a mix of seed and synthetic objects as templates for the LLM
     optional.add_argument('--context',
                          metavar='TEXT',
                          help='Additional context words/instructions to guide LLM generation (optional)')
+    optional.add_argument('--model',
+                         metavar='NAME',
+                         default='gpt-5',
+                         help='OpenAI model to use for generation (default: gpt-5)')
 
     return parser.parse_args()
 
@@ -191,7 +195,8 @@ def generate_synthetic_object(
     schema: Dict[str, Any],
     seed_objects: List[Any],
     synthetic_objects: List[Any],
-    context: Optional[str] = None
+    context: Optional[str] = None,
+    model: str = "gpt-5"
 ) -> Dict[str, Any]:
     """Generate a synthetic JSON object using LLM based on schema and templates.
 
@@ -200,6 +205,7 @@ def generate_synthetic_object(
         seed_objects: Seed objects to use as templates
         synthetic_objects: Synthetic objects to use as templates
         context: Additional context/instructions for generation (optional)
+        model: OpenAI model to use (default: gpt-5)
 
     Returns:
         Generated synthetic object as a dictionary
@@ -208,12 +214,12 @@ def generate_synthetic_object(
     log("Step 2: Generating Synthetic Object with LLM", to_stdout=False)
     log("=" * 60, to_stdout=False)
 
-    # Initialize LLM client with GPT-5
-    log("Initializing LLM client with gpt-5...", to_stdout=False)
-    client = LLMClient(model="gpt-5")
+    # Initialize LLM client with specified model
+    log(f"Initializing LLM client with {model}...", to_stdout=False)
+    client = LLMClient(model=model)
     log("✓ LLM client initialized", to_stdout=False)
 
-    # Prepare the conversation messages
+    # Combine all templates
     all_templates = seed_objects + synthetic_objects
 
     # Message 1: Provide the JSON schema with optional context
@@ -230,12 +236,6 @@ def generate_synthetic_object(
         "content": system_content
     }
 
-    # Message 2: Provide template examples
-    message_2 = {
-        "role": "user",
-        "content": f"Here are some example JSON objects that follow this schema:\n\n{json.dumps(all_templates, indent=2)}"
-    }
-
     # Message 3: Request a similar object (with context if provided)
     generation_request = "Please generate a new JSON object similar to these templates but with different content. The object should be realistic and follow the same schema."
 
@@ -249,12 +249,56 @@ def generate_synthetic_object(
         "content": generation_request
     }
 
+    # Calculate token budget based on model's context limit
+    # Reserve tokens for output and safety margin
+    model_context_limit = client.get_context_limit()
+    RESERVED_OUTPUT_TOKENS = 4000
+    SAFETY_MARGIN = int(model_context_limit * 0.1)  # 10% safety margin
+    TOKEN_BUDGET = model_context_limit - RESERVED_OUTPUT_TOKENS - SAFETY_MARGIN
+
+    log(f"Model context limit: {model_context_limit} tokens", to_stdout=False)
+    log(f"Token budget for templates: {TOKEN_BUDGET} tokens", to_stdout=False)
+
+    # Count tokens for fixed messages
+    base_tokens = client.count_tokens(message_1["content"]) + client.count_tokens(message_3["content"])
+    log(f"Base message tokens: {base_tokens}", to_stdout=False)
+
+    # Dynamically add templates until we hit token budget
+    template_header = "Here are some example JSON objects that follow this schema:\n\n"
+    templates_to_include: List[Any] = []
+    current_tokens = base_tokens + client.count_tokens(template_header)
+
+    log(f"Available templates: {len(all_templates)}", to_stdout=False)
+
+    for template in all_templates:
+        template_json = json.dumps(template, indent=2)
+        template_tokens = client.count_tokens(template_json) + 2  # +2 for separators
+
+        if current_tokens + template_tokens > TOKEN_BUDGET:
+            log(f"Token limit reached. Including {len(templates_to_include)}/{len(all_templates)} templates", to_stdout=False)
+            break
+
+        templates_to_include.append(template)
+        current_tokens += template_tokens
+
+    if len(templates_to_include) == 0:
+        log("Warning: No templates could fit in context. Using minimal template.", to_stdout=False)
+        templates_to_include = all_templates[:1]  # Include at least one template
+
+    log(f"Including {len(templates_to_include)} templates (approx {current_tokens} tokens)", to_stdout=False)
+
+    # Message 2: Provide template examples (limited by token budget)
+    message_2 = {
+        "role": "user",
+        "content": f"{template_header}{json.dumps(templates_to_include, indent=2)}"
+    }
+
     messages = [message_1, message_2, message_3]
 
     log("Sending request to LLM...", to_stdout=False)
     log(f"  - Model: {client.get_model()}", to_stdout=False)
     log(f"  - Messages: {len(messages)}", to_stdout=False)
-    log(f"  - Templates provided: {len(all_templates)}", to_stdout=False)
+    log(f"  - Templates provided: {len(templates_to_include)}/{len(all_templates)}", to_stdout=False)
 
     # Call LLM with JSON response format
     response = client.create_chat_completion(
@@ -291,8 +335,8 @@ def llm_filter(
 
     Args:
         generated_object: The newly generated JSON object to validate
-        seed_objects: Seed objects used as templates
-        synthetic_objects: Synthetic objects used as templates
+        seed_objects: Seed objects used as templates (unused, kept for signature compatibility)
+        synthetic_objects: Synthetic objects used as templates (unused, kept for signature compatibility)
         schema: JSON schema defining the structure
 
     Returns:
@@ -307,13 +351,10 @@ def llm_filter(
     filter_client = LLMClient(model="gpt-4")
     log("✓ Filter LLM client initialized", to_stdout=False)
 
-    # Prepare context: combine templates
-    all_templates = seed_objects + synthetic_objects
-
-    # Build the filtering prompt
+    # Build the filtering prompt (only using schema and generated object, not templates)
     system_message = {
         "role": "system",
-        "content": "You are a data quality validator. Your task is to determine if a newly generated JSON object fits the pattern and constraints of the provided template examples. You must respond with ONLY 'YES' or 'NO'."
+        "content": "You are a data quality validator. Your task is to determine if a newly generated JSON object is valid, realistic, and follows the provided schema. You must respond with ONLY 'YES' or 'NO'."
     }
 
     user_message = {
@@ -321,16 +362,14 @@ def llm_filter(
         "content": f"""Here is the JSON schema:
 {json.dumps(schema, indent=2)}
 
-Here are the template examples that define the expected pattern:
-{json.dumps(all_templates, indent=2)}
-
 Here is the newly generated object to validate:
 {json.dumps(generated_object, indent=2)}
 
-Does this newly generated object fit the pattern and constraints of the templates? Consider:
-- Does it follow the same structure and schema?
-- Are the field values realistic and consistent with the templates?
-- Does it maintain the same style and format as the examples?
+Does this object meet the following criteria? Consider:
+- Does it follow the schema structure correctly?
+- Are the field values realistic and well-formed?
+- Does the content make sense and have internal consistency?
+- Is the data high quality and not generic/template-like?
 - Be very strict, it is okay to answer 'NO' with a decent frequency!
 
 Answer with ONLY 'YES' or 'NO'."""
@@ -449,6 +488,7 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
     print("Synthetic Data Generation Loop")
     print("=" * 60)
     print(f"Target total objects: {args.target}")
+    print(f"Model: {args.model}")
     if args.log:
         print(f"Log file: {args.log}")
     print("=" * 60)
@@ -497,7 +537,8 @@ def main(args: argparse.Namespace) -> Dict[str, Any]:
             result["schema"],
             result["seed_objects"],
             result["synthetic_objects"],
-            context=args.context
+            context=args.context,
+            model=args.model
         )
 
         # Step 2.5: Filter the generated object with LLM
