@@ -1,0 +1,182 @@
+[
+  {
+    "messages": [
+      {
+        "subject": "Q1 Project Planning Meeting Follow-up",
+        "to": "bob@example.com, charlie@example.com",
+        "body": "Hi team,\n\nThanks for attending today's planning meeting. Here are the action items:\n\n1. Bob - finalize the project timeline\n2. Charlie - prepare the budget proposal\n3. Alice - schedule follow-up meeting\n\nLet me know if you have any questions.\n\nBest,\nAlice",
+        "cc": "",
+        "bcc": "",
+        "from": "alice@example.com",
+        "reply_to": "alice@example.com",
+        "labels": ["INBOX", "IMPORTANT"]
+      },
+      {
+        "subject": "Re: Q1 Project Planning Meeting Follow-up",
+        "to": "alice@example.com",
+        "body": "Hi Alice,\n\nThanks for the summary! I'll have the project timeline ready by Thursday EOD. Quick question - should I include the buffer time we discussed for the development phase?\n\nAlso, I'll need input from Charlie on resource allocation before I can finalize dates.\n\nBest,\nBob",
+        "cc": "charlie@example.com",
+        "bcc": "",
+        "from": "bob@example.com",
+        "reply_to": "bob@example.com",
+        "labels": ["INBOX", "SENT"]
+      },
+      {
+        "subject": "Re: Q1 Project Planning Meeting Follow-up",
+        "to": "bob@example.com, alice@example.com",
+        "body": "Bob and Alice,\n\nI'm working on the budget proposal now. Bob, I'll send you the resource allocation details by Wednesday morning so you can factor that into the timeline.\n\nAlice - I may need an extra day for the budget. Can we push the follow-up meeting to next Tuesday instead of Monday?\n\nThanks,\nCharlie",
+        "cc": "",
+        "bcc": "",
+        "from": "charlie@example.com",
+        "reply_to": "charlie@example.com",
+        "labels": ["INBOX"]
+      },
+      {
+        "subject": "Re: Q1 Project Planning Meeting Follow-up",
+        "to": "bob@example.com, charlie@example.com",
+        "body": "Perfect! Bob - yes, please include the buffer time.\n\nCharlie - Tuesday works great. I've moved the follow-up meeting to Tuesday at 2 PM. Calendar invite updated.\n\nLooking forward to seeing everything come together!\n\nAlice",
+        "cc": "",
+        "bcc": "",
+        "from": "alice@example.com",
+        "reply_to": "alice@example.com",
+        "labels": ["INBOX", "SENT"]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Quarterly Performance Review Scheduled",
+        "to": "employee@example.com",
+        "body": "Dear Employee,\n\nYour quarterly review has been scheduled for next Friday at 2 PM. Please prepare your self-assessment and be ready to discuss your achievements and goals for the upcoming quarter.\n\nMeeting Location: Conference Room B\nDuration: 1 hour\n\nPlease confirm your attendance.\n\nBest regards,\nHR Department",
+        "cc": "manager@example.com",
+        "bcc": "",
+        "from": "hr@example.com",
+        "reply_to": "hr@example.com",
+        "labels": ["INBOX", "IMPORTANT"]
+      },
+      {
+        "subject": "Re: Quarterly Performance Review Scheduled",
+        "to": "hr@example.com",
+        "body": "Hi HR Team,\n\nThank you for scheduling this. I have a conflict at 2 PM on Friday - I have a client call that I cannot reschedule.\n\nWould it be possible to move this to Thursday at 3 PM or Friday at 10 AM? I apologize for the inconvenience.\n\nBest regards,\nEmployee",
+        "cc": "manager@example.com",
+        "bcc": "",
+        "from": "employee@example.com",
+        "reply_to": "employee@example.com",
+        "labels": ["INBOX", "SENT"]
+      },
+      {
+        "subject": "Re: Quarterly Performance Review Scheduled",
+        "to": "employee@example.com",
+        "body": "Hi Employee,\n\nNo problem! I've rescheduled your review to Thursday at 3 PM in Conference Room B. Your manager has been updated on the calendar.\n\nSee you then!\n\nBest regards,\nHR Department",
+        "cc": "manager@example.com",
+        "bcc": "",
+        "from": "hr@example.com",
+        "reply_to": "hr@example.com",
+        "labels": ["INBOX", "STARRED"]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "🎉 40% OFF - Winter Sale Ends Soon!",
+        "to": "customer@example.com",
+        "body": "Don't miss our exclusive sale! Get 40% off on all premium subscriptions. Limited time offer ends this Sunday.\n\nUse code: WINTER2026 at checkout\n\nShop now: https://example.com/sale\n\nHurry, offer expires in 3 days!\n\nBest,\nMarketing Team",
+        "cc": "",
+        "bcc": "",
+        "from": "marketing@shopify.com",
+        "reply_to": "no-reply@shopify.com",
+        "labels": ["INBOX", "CATEGORY_PROMOTIONS"]
+      },
+      {
+        "subject": "⏰ Last Chance - Winter Sale Ends Tomorrow!",
+        "to": "customer@example.com",
+        "body": "This is your final reminder!\n\nOur 40% OFF Winter Sale ends TOMORROW at midnight. Don't let this opportunity slip away!\n\nYour exclusive code: WINTER2026\n\nShop now: https://example.com/sale\n\n✨ Popular items selling fast:\n- Premium Annual Plan (40% off = $299 → $179)\n- Pro Monthly Subscription (40% off = $49 → $29)\n- Business Suite (40% off = $599 → $359)\n\nSale ends in 24 hours!\n\nBest,\nMarketing Team",
+        "cc": "",
+        "bcc": "",
+        "from": "marketing@shopify.com",
+        "reply_to": "no-reply@shopify.com",
+        "labels": ["INBOX", "CATEGORY_PROMOTIONS", "UNREAD"]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "John Doe wants to connect on LinkedIn",
+        "to": "user@example.com",
+        "body": "Hi there,\n\nJohn Doe has invited you to connect on LinkedIn.\n\nJohn Doe\nSenior Software Engineer at Tech Corp\nSan Francisco Bay Area\n\nView John's profile: https://linkedin.com/in/johndoe\n\nAccept invitation: https://linkedin.com/invitations/accept/abc123\n\nBest,\nThe LinkedIn Team",
+        "cc": "",
+        "bcc": "",
+        "from": "invitations@linkedin.com",
+        "reply_to": "no-reply@linkedin.com",
+        "labels": ["INBOX", "CATEGORY_SOCIAL"]
+      },
+      {
+        "subject": "You are now connected to John Doe",
+        "to": "user@example.com",
+        "body": "Congratulations!\n\nYou and John Doe are now connected on LinkedIn. You can now:\n\n• Send messages to John\n• See John's posts and updates in your feed\n• Endorse John's skills\n• Write a recommendation\n\nStay engaged with your network!\n\nBest,\nThe LinkedIn Team",
+        "cc": "",
+        "bcc": "",
+        "from": "connections@linkedin.com",
+        "reply_to": "no-reply@linkedin.com",
+        "labels": ["INBOX", "CATEGORY_SOCIAL"]
+      },
+      {
+        "subject": "John Doe sent you a message",
+        "to": "user@example.com",
+        "body": "You have a new message from John Doe:\n\n\"Hey! Thanks for connecting. I saw you're also working on microservices architecture. I'd love to exchange ideas sometime. Are you attending the Tech Summit next month?\"\n\nReply to John: https://linkedin.com/messaging/thread/12345\n\nBest,\nThe LinkedIn Team",
+        "cc": "",
+        "bcc": "",
+        "from": "messages@linkedin.com",
+        "reply_to": "no-reply@linkedin.com",
+        "labels": ["INBOX", "IMPORTANT", "CATEGORY_SOCIAL", "UNREAD"]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Updated API Documentation",
+        "to": "dev@example.com",
+        "body": "Hi Dev Team,\n\nHere's the updated documentation for the API endpoints. I've added examples for all the new features we discussed last week.\n\nKey updates:\n- New authentication endpoints\n- Webhook configuration guide\n- Rate limiting documentation\n- Code examples in Python, JavaScript, and Go\n\nLet me know if you need any clarifications or have questions.\n\nBest regards,\nSarah",
+        "cc": "product@example.com",
+        "bcc": "archive@example.com",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": ["INBOX", "IMPORTANT"]
+      },
+      {
+        "subject": "Re: Updated API Documentation",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for the documentation! I have a couple of questions:\n\n1. For the new OAuth2 flow, do we need to register our callback URLs somewhere?\n2. The rate limiting mentions \"per API key\" - does this mean per application or per user?\n3. I noticed the webhook signature verification example uses HMAC-SHA256. Is this mandatory or can we use other algorithms?\n\nAlso, could you add an example for pagination? The docs mention it but don't show how to use the cursor parameter.\n\nThanks!\nMike",
+        "cc": "dev@example.com",
+        "bcc": "",
+        "from": "mike@example.com",
+        "reply_to": "mike@example.com",
+        "labels": ["INBOX", "SENT"]
+      },
+      {
+        "subject": "Re: Updated API Documentation",
+        "to": "mike@example.com",
+        "body": "Hi Mike,\n\nGreat questions! Let me address each:\n\n1. OAuth2 callbacks - Yes, you'll need to register them in the developer portal under Settings > OAuth Configuration. I'll add a note about this in the docs.\n\n2. Rate limiting - It's per API key, which maps to per application. Each app gets 1000 requests/hour. If you need user-level limits, we have a separate enterprise tier.\n\n3. HMAC-SHA256 is mandatory for security reasons. We require this to ensure webhook authenticity.\n\nGood catch on pagination! I'll add a comprehensive example with cursor-based pagination by end of day.\n\nAnything else?\n\nBest,\nSarah",
+        "cc": "dev@example.com, product@example.com",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": ["INBOX", "SENT"]
+      },
+      {
+        "subject": "Re: Updated API Documentation",
+        "to": "sarah@example.com",
+        "body": "Perfect, that clears everything up! Thanks for the quick response.\n\nLooking forward to the pagination examples.\n\nCheers,\nMike",
+        "cc": "",
+        "bcc": "",
+        "from": "mike@example.com",
+        "reply_to": "mike@example.com",
+        "labels": ["INBOX", "SENT"]
+      }
+    ]
+  }
+]

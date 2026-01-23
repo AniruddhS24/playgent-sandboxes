@@ -1,0 +1,928 @@
+[
+  {
+    "tables": [
+      {
+        "name": "Tasks",
+        "fields": [
+          {
+            "name": "Task Name",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Status",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Todo", "color": "gray"},
+                {"name": "In Progress", "color": "yellow"},
+                {"name": "Done", "color": "green"}
+              ]
+            }
+          },
+          {
+            "name": "Priority",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Low", "color": "blue"},
+                {"name": "Medium", "color": "yellow"},
+                {"name": "High", "color": "red"}
+              ]
+            }
+          },
+          {
+            "name": "Due Date",
+            "type": "date",
+            "options": {"dateFormat": "M/D/YYYY"}
+          },
+          {
+            "name": "Assignee",
+            "type": "singleLineText",
+            "options": {}
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Task Name": "Design homepage mockup",
+              "Status": "In Progress",
+              "Priority": "High",
+              "Due Date": "2026-01-30",
+              "Assignee": "Sarah Chen"
+            }
+          },
+          {
+            "fields": {
+              "Task Name": "Write API documentation",
+              "Status": "Todo",
+              "Priority": "Medium",
+              "Due Date": "2026-02-05",
+              "Assignee": "Mike Johnson"
+            }
+          },
+          {
+            "fields": {
+              "Task Name": "Fix login bug",
+              "Status": "Done",
+              "Priority": "High",
+              "Due Date": "2026-01-25",
+              "Assignee": "Alex Kim"
+            }
+          }
+        ],
+        "description": "Project task tracking for the website redesign project"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Customers",
+        "fields": [
+          {
+            "name": "Company Name",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Contact Person",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Email",
+            "type": "email",
+            "options": {}
+          },
+          {
+            "name": "Phone",
+            "type": "phoneNumber",
+            "options": {}
+          },
+          {
+            "name": "Deal Stage",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Lead", "color": "gray"},
+                {"name": "Qualified", "color": "blue"},
+                {"name": "Proposal", "color": "yellow"},
+                {"name": "Negotiation", "color": "orange"},
+                {"name": "Closed Won", "color": "green"},
+                {"name": "Closed Lost", "color": "red"}
+              ]
+            }
+          },
+          {
+            "name": "Deal Value",
+            "type": "currency",
+            "options": {"precision": 2, "symbol": "$"}
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Company Name": "Acme Corp",
+              "Contact Person": "John Smith",
+              "Email": "john.smith@acmecorp.com",
+              "Phone": "+1-555-0123",
+              "Deal Stage": "Proposal",
+              "Deal Value": 45000
+            }
+          },
+          {
+            "fields": {
+              "Company Name": "TechStart Inc",
+              "Contact Person": "Emily Wong",
+              "Email": "emily@techstart.io",
+              "Phone": "+1-555-0456",
+              "Deal Stage": "Negotiation",
+              "Deal Value": 78000
+            }
+          },
+          {
+            "fields": {
+              "Company Name": "Global Solutions Ltd",
+              "Contact Person": "Robert Taylor",
+              "Email": "rtaylor@globalsolutions.com",
+              "Phone": "+1-555-0789",
+              "Deal Stage": "Closed Won",
+              "Deal Value": 120000
+            }
+          }
+        ],
+        "description": "CRM for tracking sales pipeline and customer relationships"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Products",
+        "fields": [
+          {
+            "name": "Product Name",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "SKU",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Category",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Electronics", "color": "blue"},
+                {"name": "Clothing", "color": "purple"},
+                {"name": "Home & Garden", "color": "green"},
+                {"name": "Books", "color": "orange"}
+              ]
+            }
+          },
+          {
+            "name": "Price",
+            "type": "currency",
+            "options": {"precision": 2, "symbol": "$"}
+          },
+          {
+            "name": "Stock Quantity",
+            "type": "number",
+            "options": {"precision": 0}
+          },
+          {
+            "name": "In Stock",
+            "type": "checkbox",
+            "options": {}
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Product Name": "Wireless Headphones Pro",
+              "SKU": "WHP-001",
+              "Category": "Electronics",
+              "Price": 149.99,
+              "Stock Quantity": 45,
+              "In Stock": true
+            }
+          },
+          {
+            "fields": {
+              "Product Name": "Cotton T-Shirt",
+              "SKU": "CTS-024",
+              "Category": "Clothing",
+              "Price": 24.99,
+              "Stock Quantity": 0,
+              "In Stock": false
+            }
+          },
+          {
+            "fields": {
+              "Product Name": "Garden Hose 50ft",
+              "SKU": "GH-050",
+              "Category": "Home & Garden",
+              "Price": 34.99,
+              "Stock Quantity": 18,
+              "In Stock": true
+            }
+          }
+        ],
+        "description": "Product inventory management system"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Content Calendar",
+        "fields": [
+          {
+            "name": "Title",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Content Type",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Blog Post", "color": "blue"},
+                {"name": "Social Media", "color": "purple"},
+                {"name": "Video", "color": "red"},
+                {"name": "Newsletter", "color": "green"}
+              ]
+            }
+          },
+          {
+            "name": "Platform",
+            "type": "multipleSelects",
+            "options": {
+              "choices": [
+                {"name": "Website", "color": "blue"},
+                {"name": "Twitter", "color": "cyan"},
+                {"name": "LinkedIn", "color": "blue"},
+                {"name": "Instagram", "color": "purple"},
+                {"name": "YouTube", "color": "red"}
+              ]
+            }
+          },
+          {
+            "name": "Publish Date",
+            "type": "date",
+            "options": {"dateFormat": "YYYY-MM-DD"}
+          },
+          {
+            "name": "Author",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Status",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Idea", "color": "gray"},
+                {"name": "Draft", "color": "yellow"},
+                {"name": "Review", "color": "orange"},
+                {"name": "Published", "color": "green"}
+              ]
+            }
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Title": "10 Tips for Remote Team Collaboration",
+              "Content Type": "Blog Post",
+              "Platform": ["Website", "LinkedIn"],
+              "Publish Date": "2026-02-01",
+              "Author": "Jessica Martinez",
+              "Status": "Review"
+            }
+          },
+          {
+            "fields": {
+              "Title": "Product Launch Announcement",
+              "Content Type": "Social Media",
+              "Platform": ["Twitter", "LinkedIn", "Instagram"],
+              "Publish Date": "2026-01-28",
+              "Author": "David Lee",
+              "Status": "Draft"
+            }
+          },
+          {
+            "fields": {
+              "Title": "Year in Review 2025",
+              "Content Type": "Video",
+              "Platform": ["YouTube", "Website"],
+              "Publish Date": "2026-01-15",
+              "Author": "Chris Anderson",
+              "Status": "Published"
+            }
+          }
+        ],
+        "description": "Editorial calendar for managing content across multiple channels"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Events",
+        "fields": [
+          {
+            "name": "Event Name",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Event Type",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Conference", "color": "blue"},
+                {"name": "Workshop", "color": "green"},
+                {"name": "Webinar", "color": "purple"},
+                {"name": "Networking", "color": "orange"}
+              ]
+            }
+          },
+          {
+            "name": "Date",
+            "type": "date",
+            "options": {"dateFormat": "MMMM D, YYYY"}
+          },
+          {
+            "name": "Location",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Expected Attendees",
+            "type": "number",
+            "options": {"precision": 0}
+          },
+          {
+            "name": "Budget",
+            "type": "currency",
+            "options": {"precision": 2, "symbol": "$"}
+          },
+          {
+            "name": "Confirmed",
+            "type": "checkbox",
+            "options": {}
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Event Name": "Tech Summit 2026",
+              "Event Type": "Conference",
+              "Date": "2026-03-15",
+              "Location": "San Francisco Convention Center",
+              "Expected Attendees": 500,
+              "Budget": 75000,
+              "Confirmed": true
+            }
+          },
+          {
+            "fields": {
+              "Event Name": "UX Design Workshop",
+              "Event Type": "Workshop",
+              "Date": "2026-02-20",
+              "Location": "Online - Zoom",
+              "Expected Attendees": 50,
+              "Budget": 2500,
+              "Confirmed": true
+            }
+          },
+          {
+            "fields": {
+              "Event Name": "Startup Founders Meetup",
+              "Event Type": "Networking",
+              "Date": "2026-02-10",
+              "Location": "Coffee House Downtown",
+              "Expected Attendees": 30,
+              "Budget": 500,
+              "Confirmed": false
+            }
+          }
+        ],
+        "description": "Event planning and management tracker"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Employees",
+        "fields": [
+          {
+            "name": "Full Name",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Email",
+            "type": "email",
+            "options": {}
+          },
+          {
+            "name": "Department",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Engineering", "color": "blue"},
+                {"name": "Product", "color": "purple"},
+                {"name": "Sales", "color": "green"},
+                {"name": "Marketing", "color": "orange"},
+                {"name": "HR", "color": "pink"}
+              ]
+            }
+          },
+          {
+            "name": "Position",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Start Date",
+            "type": "date",
+            "options": {"dateFormat": "MM/DD/YYYY"}
+          },
+          {
+            "name": "Remote",
+            "type": "checkbox",
+            "options": {}
+          },
+          {
+            "name": "Skills",
+            "type": "multipleSelects",
+            "options": {
+              "choices": [
+                {"name": "Python", "color": "blue"},
+                {"name": "JavaScript", "color": "yellow"},
+                {"name": "Design", "color": "purple"},
+                {"name": "Leadership", "color": "orange"},
+                {"name": "Analytics", "color": "green"}
+              ]
+            }
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Full Name": "Amanda Foster",
+              "Email": "amanda.foster@company.com",
+              "Department": "Engineering",
+              "Position": "Senior Software Engineer",
+              "Start Date": "2023-06-15",
+              "Remote": true,
+              "Skills": ["Python", "JavaScript"]
+            }
+          },
+          {
+            "fields": {
+              "Full Name": "Brian Cooper",
+              "Email": "brian.cooper@company.com",
+              "Department": "Product",
+              "Position": "Product Manager",
+              "Start Date": "2024-01-10",
+              "Remote": false,
+              "Skills": ["Analytics", "Leadership"]
+            }
+          },
+          {
+            "fields": {
+              "Full Name": "Catherine Liu",
+              "Email": "catherine.liu@company.com",
+              "Department": "Marketing",
+              "Position": "Marketing Director",
+              "Start Date": "2022-03-01",
+              "Remote": false,
+              "Skills": ["Leadership", "Analytics"]
+            }
+          }
+        ],
+        "description": "Employee directory and information management"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Bugs",
+        "fields": [
+          {
+            "name": "Bug Title",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Description",
+            "type": "multilineText",
+            "options": {}
+          },
+          {
+            "name": "Severity",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Critical", "color": "red"},
+                {"name": "High", "color": "orange"},
+                {"name": "Medium", "color": "yellow"},
+                {"name": "Low", "color": "blue"}
+              ]
+            }
+          },
+          {
+            "name": "Status",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Open", "color": "red"},
+                {"name": "In Progress", "color": "yellow"},
+                {"name": "Testing", "color": "blue"},
+                {"name": "Resolved", "color": "green"}
+              ]
+            }
+          },
+          {
+            "name": "Reported By",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Assigned To",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Date Reported",
+            "type": "date",
+            "options": {"dateFormat": "YYYY-MM-DD"}
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Bug Title": "Login page crashes on Safari",
+              "Description": "When attempting to log in using Safari browser on macOS, the page crashes and shows a white screen. This happens consistently with all user accounts.",
+              "Severity": "High",
+              "Status": "In Progress",
+              "Reported By": "User Testing Team",
+              "Assigned To": "Alex Rivera",
+              "Date Reported": "2026-01-20"
+            }
+          },
+          {
+            "fields": {
+              "Bug Title": "Export to CSV missing columns",
+              "Description": "When exporting data to CSV format, the last three columns are missing from the output file.",
+              "Severity": "Medium",
+              "Status": "Open",
+              "Reported By": "Sarah Miller",
+              "Assigned To": "Jordan Chen",
+              "Date Reported": "2026-01-22"
+            }
+          },
+          {
+            "fields": {
+              "Bug Title": "Typo in confirmation message",
+              "Description": "The success message after form submission has a typo: 'Your submision was successful' should be 'Your submission was successful'.",
+              "Severity": "Low",
+              "Status": "Resolved",
+              "Reported By": "Marketing Team",
+              "Assigned To": "Taylor Kim",
+              "Date Reported": "2026-01-18"
+            }
+          }
+        ],
+        "description": "Bug tracking system for software development"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Recipes",
+        "fields": [
+          {
+            "name": "Recipe Name",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Cuisine",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Italian", "color": "red"},
+                {"name": "Mexican", "color": "orange"},
+                {"name": "Asian", "color": "yellow"},
+                {"name": "American", "color": "blue"},
+                {"name": "Mediterranean", "color": "green"}
+              ]
+            }
+          },
+          {
+            "name": "Course",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Breakfast", "color": "yellow"},
+                {"name": "Lunch", "color": "orange"},
+                {"name": "Dinner", "color": "red"},
+                {"name": "Dessert", "color": "pink"},
+                {"name": "Snack", "color": "blue"}
+              ]
+            }
+          },
+          {
+            "name": "Prep Time (minutes)",
+            "type": "number",
+            "options": {"precision": 0}
+          },
+          {
+            "name": "Cook Time (minutes)",
+            "type": "number",
+            "options": {"precision": 0}
+          },
+          {
+            "name": "Servings",
+            "type": "number",
+            "options": {"precision": 0}
+          },
+          {
+            "name": "Dietary Tags",
+            "type": "multipleSelects",
+            "options": {
+              "choices": [
+                {"name": "Vegetarian", "color": "green"},
+                {"name": "Vegan", "color": "green"},
+                {"name": "Gluten-Free", "color": "orange"},
+                {"name": "Dairy-Free", "color": "blue"},
+                {"name": "Low-Carb", "color": "purple"}
+              ]
+            }
+          },
+          {
+            "name": "Tried",
+            "type": "checkbox",
+            "options": {}
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Recipe Name": "Homemade Margherita Pizza",
+              "Cuisine": "Italian",
+              "Course": "Dinner",
+              "Prep Time (minutes)": 20,
+              "Cook Time (minutes)": 15,
+              "Servings": 4,
+              "Dietary Tags": ["Vegetarian"],
+              "Tried": true
+            }
+          },
+          {
+            "fields": {
+              "Recipe Name": "Chicken Pad Thai",
+              "Cuisine": "Asian",
+              "Course": "Dinner",
+              "Prep Time (minutes)": 15,
+              "Cook Time (minutes)": 20,
+              "Servings": 3,
+              "Dietary Tags": ["Gluten-Free", "Dairy-Free"],
+              "Tried": true
+            }
+          },
+          {
+            "fields": {
+              "Recipe Name": "Vegan Chocolate Brownies",
+              "Cuisine": "American",
+              "Course": "Dessert",
+              "Prep Time (minutes)": 10,
+              "Cook Time (minutes)": 25,
+              "Servings": 12,
+              "Dietary Tags": ["Vegan", "Vegetarian"],
+              "Tried": false
+            }
+          }
+        ],
+        "description": "Personal recipe collection and meal planning"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Books",
+        "fields": [
+          {
+            "name": "Title",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Author",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Genre",
+            "type": "multipleSelects",
+            "options": {
+              "choices": [
+                {"name": "Fiction", "color": "purple"},
+                {"name": "Non-Fiction", "color": "blue"},
+                {"name": "Science Fiction", "color": "cyan"},
+                {"name": "Mystery", "color": "gray"},
+                {"name": "Biography", "color": "orange"},
+                {"name": "Self-Help", "color": "green"}
+              ]
+            }
+          },
+          {
+            "name": "Publication Year",
+            "type": "number",
+            "options": {"precision": 0}
+          },
+          {
+            "name": "Rating",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "5 stars", "color": "green"},
+                {"name": "4 stars", "color": "blue"},
+                {"name": "3 stars", "color": "yellow"},
+                {"name": "2 stars", "color": "orange"},
+                {"name": "1 star", "color": "red"}
+              ]
+            }
+          },
+          {
+            "name": "Read",
+            "type": "checkbox",
+            "options": {}
+          },
+          {
+            "name": "Notes",
+            "type": "multilineText",
+            "options": {}
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Title": "The Midnight Library",
+              "Author": "Matt Haig",
+              "Genre": ["Fiction"],
+              "Publication Year": 2020,
+              "Rating": "5 stars",
+              "Read": true,
+              "Notes": "Beautifully written exploration of alternate lives and choices. The concept of infinite possibilities was fascinating."
+            }
+          },
+          {
+            "fields": {
+              "Title": "Atomic Habits",
+              "Author": "James Clear",
+              "Genre": ["Non-Fiction", "Self-Help"],
+              "Publication Year": 2018,
+              "Rating": "4 stars",
+              "Read": true,
+              "Notes": "Practical advice on building good habits. The 1% improvement concept is very actionable."
+            }
+          },
+          {
+            "fields": {
+              "Title": "Project Hail Mary",
+              "Author": "Andy Weir",
+              "Genre": ["Science Fiction", "Fiction"],
+              "Publication Year": 2021,
+              "Rating": "5 stars",
+              "Read": false,
+              "Notes": "Next on my reading list. Heard great things about it from book club."
+            }
+          }
+        ],
+        "description": "Personal book library and reading tracker"
+      }
+    ]
+  },
+  {
+    "tables": [
+      {
+        "name": "Job Applications",
+        "fields": [
+          {
+            "name": "Company",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Position",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Location",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Application Date",
+            "type": "date",
+            "options": {"dateFormat": "MM/DD/YYYY"}
+          },
+          {
+            "name": "Status",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Applied", "color": "blue"},
+                {"name": "Phone Screen", "color": "cyan"},
+                {"name": "Interview", "color": "yellow"},
+                {"name": "Offer", "color": "green"},
+                {"name": "Rejected", "color": "red"},
+                {"name": "Withdrawn", "color": "gray"}
+              ]
+            }
+          },
+          {
+            "name": "Salary Range",
+            "type": "singleLineText",
+            "options": {}
+          },
+          {
+            "name": "Job Type",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "Full-time", "color": "blue"},
+                {"name": "Part-time", "color": "green"},
+                {"name": "Contract", "color": "orange"},
+                {"name": "Remote", "color": "purple"}
+              ]
+            }
+          },
+          {
+            "name": "Interested",
+            "type": "singleSelect",
+            "options": {
+              "choices": [
+                {"name": "High", "color": "green"},
+                {"name": "Medium", "color": "yellow"},
+                {"name": "Low", "color": "gray"}
+              ]
+            }
+          }
+        ],
+        "records": [
+          {
+            "fields": {
+              "Company": "Google",
+              "Position": "Senior Software Engineer",
+              "Location": "Mountain View, CA",
+              "Application Date": "2026-01-15",
+              "Status": "Interview",
+              "Salary Range": "$180k - $220k",
+              "Job Type": "Full-time",
+              "Interested": "High"
+            }
+          },
+          {
+            "fields": {
+              "Company": "Stripe",
+              "Position": "Product Manager",
+              "Location": "San Francisco, CA",
+              "Application Date": "2026-01-18",
+              "Status": "Phone Screen",
+              "Salary Range": "$160k - $200k",
+              "Job Type": "Full-time",
+              "Interested": "High"
+            }
+          },
+          {
+            "fields": {
+              "Company": "Remote Co",
+              "Position": "Full Stack Developer",
+              "Location": "Remote",
+              "Application Date": "2026-01-10",
+              "Status": "Rejected",
+              "Salary Range": "$120k - $150k",
+              "Job Type": "Remote",
+              "Interested": "Medium"
+            }
+          }
+        ],
+        "description": "Job search tracker for applications and interviews"
+      }
+    ]
+  }
+]

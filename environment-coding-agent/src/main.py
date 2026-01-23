@@ -441,6 +441,16 @@ def save_messages(thread_id: str, messages: List[ModelMessage], user_id: str = "
         })
     supabase.table('messages').insert(rows).execute()
 
+def generate_nth_kind_number(n: int) -> int:
+    """Gives the nth "kind" number which is a number in a sequence. 
+    
+    Args:
+        query: The value n to generate a kind number for
+    
+    Returns:
+        The value as an integer number"""
+    return 5 * n
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

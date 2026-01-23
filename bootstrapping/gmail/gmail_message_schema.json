@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Gmail Message Schema",
+  "description": "Schema for Gmail message data structure",
+  "type": "object",
+  "properties": {
+    "messages": {
+      "type": "array",
+      "description": "Array of email messages",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subject": {
+            "type": "string",
+            "description": "Email subject line"
+          },
+          "to": {
+            "type": "string",
+            "description": "Recipient email addresses (comma-separated)"
+          },
+          "body": {
+            "type": "string",
+            "description": "Email body content"
+          },
+          "cc": {
+            "type": "string",
+            "description": "CC email addresses (comma-separated)"
+          },
+          "bcc": {
+            "type": "string",
+            "description": "BCC email addresses (comma-separated)"
+          },
+          "from": {
+            "type": "string",
+            "description": "Sender email address"
+          },
+          "reply_to": {
+            "type": "string",
+            "description": "Reply-to email address"
+          },
+          "labels": {
+            "type": "array",
+            "description": "Gmail labels/categories",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["subject", "to", "body", "from"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["messages"],
+  "additionalProperties": false
+}
