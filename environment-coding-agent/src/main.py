@@ -17,58 +17,8 @@ logger = getLogger(__name__)
 logging.getLogger("mcp.client").setLevel(logging.DEBUG)
 logging.getLogger("pydantic_ai").setLevel(logging.DEBUG)
 
-SYSTEM_PROMPT = """You are a coding agent that can write, edit, and execute TypeScript/JavaScript code in a Node.js sandbox environment.
-
-## Environment
-- **Runtime**: Node.js with TypeScript support
-- **Package Manager**: npm/pnpm available
-- **Primary Languages**: TypeScript (.ts), JavaScript (.js)
-- **Working Directory**: /blaxel
-
-## Available Tools via MCP
-
-### File Operations:
-- **fsReadFile** - Read file contents
-- **fsWriteFile** - Create or update entire files
-- **fsListDirectory** - List directory contents
-- **codegenListDir** - Directory listing (optimized for codegen)
-
-### Intelligent Code Editing:
-- **codegenEditFile** - Apply targeted edits to existing files (RECOMMENDED for modifications)
-  - Uses AI-powered editing (Relace backend)
-  - Much faster than rewriting entire files
-  - Format: Provide clear instructions like "add a function to calculate circle area"
-- **codegenParallelApply** - Apply same edit across multiple files
-- **codegenReapply** - Retry failed edits
-
-### Code Search & Discovery:
-- **codegenFileSearch** - Fast filename matching
-- **codegenGrepSearch** - Pattern/text search in files
-- **codegenCodebaseSearch** - Semantic code search
-- **codegenReadFileRange** - Read specific line ranges (max 250 lines)
-- **codegenRerank** - Semantic reranking of search results
-
-### Execution:
-- **processExecute** - Run shell commands, npm scripts, or node programs
-  - Examples: `npm install`, `node script.js`, `tsc --noEmit`
-
-### Other Tools:
-- **fetch_data** - Fetch data from external databases (placeholder)
-
-## Workflow
-1. **Search & Read**: Use codegen search tools to understand existing code structure
-2. **Edit Efficiently**: Prefer `codegenEditFile` for modifications over full rewrites
-3. **Write New Files**: Use `fsWriteFile` only for new files
-4. **Execute & Test**: Run code with `processExecute` (e.g., `node file.js`, `npm test`)
-5. **Iterate**: Fix errors by reading output and applying targeted edits
-
-## Best Practices
-- **Always use TypeScript/JavaScript** - This is a Node.js environment
-- **Use targeted edits** - `codegenEditFile` is faster than rewriting files
-- **Test your code** - Execute and verify output
-- **Install dependencies** - Use `npm install <package>` when needed
-
-Be concise and iterate until the task is complete."""
+SYSTEM_PROMPT = """You are a coding agent that can write, edit, and execute Python code in a Python3 sandbox environment.
+"""
 
 
 def fetch_data(query: str) -> str:
@@ -82,6 +32,16 @@ def fetch_data(query: str) -> str:
     """
     # TODO: Implement actual database fetching
     return f"TODO: fetch data for query: {query}"
+
+def generate_nth_kind_number(n: int) -> int:
+    """Gives the nth "kind" number which is a number in a sequence. 
+    
+    Args:
+        query: The value n to generate a kind number for
+    
+    Returns:
+        The value as an integer number"""
+    return 5 * n
 
 
 @asynccontextmanager
@@ -109,8 +69,8 @@ async def handle_request(request: Request):
         return {"response": "Please provide an input message"}
     
     sandbox = await SandboxInstance.create_if_not_exists({
-        "name": "playgent-coding-sandbox-ts",
-        "image": "blaxel/ts-app:latest",
+        "name": "playgent-coding-sandbox-py",
+        "image": "blaxel/py-app:latest",
         "memory": 4096,
         "ports": [
             { "name": "preview", "target": 3000 }
@@ -121,7 +81,7 @@ async def handle_request(request: Request):
     })
     
     # Connect to sandbox MCP with auth (get URL from sandbox instance)
-    sandbox_url = "https://run.blaxel.ai/pharmie-agents/sandboxes/codegen-sandbox/mcp"
+    sandbox_url = "https://run.blaxel.ai/pharmie-agents/sandboxes/playgent-coding-sandbox-py/mcp"
 
     async with httpx.AsyncClient(
         headers={"Authorization": f"Bearer {os.getenv('BLAXEL_API_KEY')}"}
@@ -137,7 +97,7 @@ async def handle_request(request: Request):
             'anthropic:claude-sonnet-4-0',
             system_prompt=SYSTEM_PROMPT,
             toolsets=[sandbox_mcp],
-            tools=[Tool(fetch_data)],
+            tools=[Tool(fetch_data), Tool(generate_nth_kind_number)],
         )
 
         logger.info("Entering agent context manager...")
