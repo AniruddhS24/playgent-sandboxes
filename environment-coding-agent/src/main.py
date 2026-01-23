@@ -711,7 +711,7 @@ async def list_state_items(
     if app:
         query = query.eq("app", app)
     if component_name:
-        query = query.eq("component_name", component_name)
+        query = query.eq("component_name", component_name.lower())
 
     response = query.execute()
     return response.data
