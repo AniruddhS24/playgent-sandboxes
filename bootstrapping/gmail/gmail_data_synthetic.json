@@ -1,1 +1,2369 @@
-[]
+[
+  {
+    "messages": [
+      {
+        "subject": "Monthly Sales Report for October",
+        "to": "diana@example.com, eric@example.com",
+        "body": "Hello team,\n\nPlease find attached the sales report for October. We saw a significant increase in sales compared to September. Key highlights:\n\n1. 15% increase in new customer acquisitions\n2. Successful launch of the new product line\n3. Feedback from surveys showing improved customer satisfaction\n\nLet's discuss this in our next meeting.\n\nBest,\nMark",
+        "cc": "",
+        "bcc": "",
+        "from": "mark@example.com",
+        "reply_to": "mark@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Monthly Sales Report for October",
+        "to": "mark@example.com",
+        "body": "Hi Mark,\n\nThanks for the report! I'm reviewing the details now. Could you please clarify the customer feedback metrics? It would be helpful for our upcoming strategy session.\n\nThanks,\nDiana",
+        "cc": "",
+        "bcc": "",
+        "from": "diana@example.com",
+        "reply_to": "diana@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Monthly Sales Report for October",
+        "to": "mark@example.com, diana@example.com",
+        "body": "Diana and Mark,\n\nI agree with Diana. Clarifying the feedback metrics would be beneficial. Additionally, can we also get insights on the regions where the sales were strongest? \n\nLooking forward to the discussion.\n\nBest,\nEric",
+        "cc": "",
+        "bcc": "",
+        "from": "eric@example.com",
+        "reply_to": "eric@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Monthly Sales Report for October",
+        "to": "diana@example.com, eric@example.com",
+        "body": "Great points, Diana and Eric. I'll pull those metrics together and send them out by the end of the day. Let's aim to have a productive strategy session next week.\n\nBest,\nMark",
+        "cc": "",
+        "bcc": "",
+        "from": "mark@example.com",
+        "reply_to": "mark@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Quarterly Financial Review Scheduling",
+        "to": "james@example.com, lucy@example.com",
+        "body": "Hello Team,\n\nI would like to schedule our quarterly financial review meeting. Please let me know your availability over the next two weeks so we can finalize a date that works for everyone.\n\nBest regards,\nSophia",
+        "cc": "",
+        "bcc": "",
+        "from": "sophia@example.com",
+        "reply_to": "sophia@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Financial Review Scheduling",
+        "to": "sophia@example.com",
+        "body": "Hi Sophia,\n\nThanks for reaching out! I'm available on Thursdays afternoons next week or any time Friday next week. Let me know if that works for the rest of the team.\n\nBest,\nJames",
+        "cc": "lucy@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Financial Review Scheduling",
+        "to": "james@example.com, sophia@example.com",
+        "body": "James and Sophia,\n\nI'm free most mornings next week except Thursday. If we could do Wednesday at 10 AM, that would be perfect! Let me know what you both think.\n\nThanks,\nLucy",
+        "cc": "",
+        "bcc": "",
+        "from": "lucy@example.com",
+        "reply_to": "lucy@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Financial Review Scheduling",
+        "to": "james@example.com, lucy@example.com",
+        "body": "That's good to know, Lucy. Let's aim for Wednesday at 10 AM. I\u2019ll send a calendar invite once we've confirmed that works for everyone.\n\nThanks!\nSophia",
+        "cc": "",
+        "bcc": "",
+        "from": "sophia@example.com",
+        "reply_to": "sophia@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Project Alpha Kickoff Meeting Invite",
+        "to": "jane@example.com, tom@example.com",
+        "body": "Hello Team,\n\nI hope this message finds you well! I would like to schedule a kickoff meeting for Project Alpha. Please see the proposed agenda below:\n\n1. Introductions\n2. Project scope review\n3. Timeline and milestones\n4. Roles and responsibilities\n\nPlease let me know your availability for next week so we can finalize the schedule.\n\nBest regards,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kickoff Meeting Invite",
+        "to": "michael@example.com",
+        "body": "Hi Michael,\n\nThanks for the invite! I\u2019m available on Tuesday and Thursday afternoons. Looking forward to discussing Project Alpha! \n\nBest,\nJane",
+        "cc": "",
+        "bcc": "",
+        "from": "jane@example.com",
+        "reply_to": "jane@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kickoff Meeting Invite",
+        "to": "michael@example.com, jane@example.com",
+        "body": "Hi Michael and Jane,\n\nI can also make Tuesday afternoon work. Please confirm if that date is good for everyone. Looking forward to kicking off this project together!\n\nCheers,\nTom",
+        "cc": "",
+        "bcc": "",
+        "from": "tom@example.com",
+        "reply_to": "tom@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kickoff Meeting Invite",
+        "to": "jane@example.com, tom@example.com",
+        "body": "Great! Tuesday at 2 PM works for everyone. I\u2019ll send a calendar invite shortly. Excited to get started on Project Alpha!\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Weekly Team Update",
+        "to": "john@example.com, emma@example.com",
+        "body": "Hi Team,\n\nHere's the update for the week:\n\n1. John - please finalize the design draft by Wednesday.\n2. Emma - let's review the client feedback together on Thursday.\n3. Lisa - prepare the presentation for Friday's meeting.\n\nLet me know if anyone needs assistance.\n\nBest regards,\nSara",
+        "cc": "lisa@example.com",
+        "bcc": "",
+        "from": "sara@example.com",
+        "reply_to": "sara@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Weekly Team Update",
+        "to": "sara@example.com",
+        "body": "Hi Sara,\n\nThanks for the update! Just to clarify - is there a specific time you'd prefer for the client feedback discussion?\n\nLooking forward to it!\n\nBest,\nJohn",
+        "cc": "",
+        "bcc": "",
+        "from": "john@example.com",
+        "reply_to": "john@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Weekly Team Update",
+        "to": "sara@example.com, john@example.com",
+        "body": "Sara and John,\n\nI suggest we do the client feedback review at 2 PM on Thursday. That seems to work for everyone based on previous discussions.\n\nLooking forward to it!\n\nBest,\nEmma",
+        "cc": "",
+        "bcc": "",
+        "from": "emma@example.com",
+        "reply_to": "emma@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Weekly Team Update",
+        "to": "john@example.com, emma@example.com, sara@example.com",
+        "body": "Sounds good to me. I'll confirm with Lisa for the presentation details and join you both at 2 PM.\n\nBest,\nSara",
+        "cc": "",
+        "bcc": "",
+        "from": "sara@example.com",
+        "reply_to": "sara@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plans for November",
+        "to": "james@example.com, kathy@example.com",
+        "body": "Hi team,\n\nI'm excited to share some ideas for our upcoming team outing. Here are a few suggestions:\n\n1. Escape Room Challenge\n2. Bowling Night\n3. Outdoor Picnic\n\nPlease let me know your preferences by the end of the week so we can finalize the details.\n\nLooking forward to your feedback!\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for organizing the outing! I love the idea of the escape room. It sounds like so much fun! I'm in for that one.\n\nBest,\nJames",
+        "cc": "",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "sarah@example.com, james@example.com",
+        "body": "Sarah and James,\n\nI'm on board for the escape room too! Additionally, I think it might be nice to have a picnic afterwards if the weather permits. That way we can chill and enjoy some time together.\n\nLooking forward to hearing other thoughts!\n\nCheers,\nKathy",
+        "cc": "",
+        "bcc": "",
+        "from": "kathy@example.com",
+        "reply_to": "kathy@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "james@example.com, kathy@example.com",
+        "body": "Great suggestion, Kathy! A picnic would be a lovely addition. I\u2019ll start looking into the escape room reservations and keep you all updated!\n\nThanks,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plans",
+        "to": "jessica@example.com, brian@example.com",
+        "body": "Hello everyone,\n\nI hope you're all doing well! I'm excited to start planning our upcoming team outing. I'd love to hear your thoughts on activities you'd like to do.\n\nSome ideas that have been suggested:\n1. Bowling night\n2. Outdoor picnic\n3. Escape room challenge\n\nPlease reply with your preference by Friday so we can finalize the plans.\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for organizing this! I'm really keen on the outdoor picnic idea. It would be great to enjoy some nature and have fun games.\n\nLooking forward to the final plans!\n\nCheers,\nJessica",
+        "cc": "brian@example.com",
+        "bcc": "",
+        "from": "jessica@example.com",
+        "reply_to": "jessica@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans",
+        "to": "jessica@example.com, sarah@example.com",
+        "body": "Hey Sarah and Jessica,\n\nI love the idea of an outdoor picnic as well! We could bring some games and enjoy the day. Let's make sure to pick a good spot.\n\nBest,\nBrian",
+        "cc": "",
+        "bcc": "",
+        "from": "brian@example.com",
+        "reply_to": "brian@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans",
+        "to": "jessica@example.com, brian@example.com",
+        "body": "Perfect! I'm glad you're both on board with the picnic. I\u2019ll look for parks in the area and we can choose a nice location.\n\nLet\u2019s aim for next Saturday if that works for everyone.\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Announcement",
+        "to": "jessica@example.com, michael@example.com, tom@example.com",
+        "body": "Hi team,\n\nI\u2019m excited to announce our annual team outing! It\u2019s scheduled for Friday, November 10th. We will have a fun day at the amusement park followed by dinner at a nearby restaurant.\n\nPlease RSVP by the end of the week so we can finalize the plans.\n\nLooking forward to seeing everyone!\n\nBest,\nSarah",
+        "cc": "david@example.com",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Announcement",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for the update! That sounds like a lot of fun. I\u2019ll be there!\n\nBest,\nJessica",
+        "cc": "",
+        "bcc": "",
+        "from": "jessica@example.com",
+        "reply_to": "jessica@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Announcement",
+        "to": "sarah@example.com, jessica@example.com",
+        "body": "Sarah, Jessica,\n\nI\u2019ll also be joining! Let me know if we need to organize transportation or anything else.\n\nCheers,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Announcement",
+        "to": "sarah@example.com, jessica@example.com, michael@example.com",
+        "body": "Hi everyone,\n\nCount me in too! Looking forward to it. I can help with the arrangements if necessary.\n\nThanks,\nTom",
+        "cc": "",
+        "bcc": "",
+        "from": "tom@example.com",
+        "reply_to": "tom@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Quarterly Budget Review Meeting",
+        "to": "sara@example.com, mike@example.com, lucas@example.com",
+        "body": "Hi everyone,\n\nAs we approach the end of the quarter, it's time for our budget review. Please prepare your departmental budgets and be ready to discuss:\n\n1. Variances from the initial budget\n2. Unforeseen expenses\n3. Future financial projections\n\nLooking forward to everyone's input!\n\nCheers,\nRyan",
+        "cc": "",
+        "bcc": "",
+        "from": "ryan@example.com",
+        "reply_to": "ryan@example.com",
+        "labels": [
+          "INBOX",
+          "URGENT"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Budget Review Meeting",
+        "to": "ryan@example.com",
+        "body": "Hi Ryan,\n\nThanks for the heads-up! I will have the updated figures ready for our meeting. Do you want me to include any specific comparisons to previous quarters?\n\nBest,\nSara",
+        "cc": "mike@example.com",
+        "bcc": "",
+        "from": "sara@example.com",
+        "reply_to": "sara@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Budget Review Meeting",
+        "to": "sara@example.com, ryan@example.com",
+        "body": "Sara and Ryan,\n\nI suggest we include insights into the expenditures that have exceeded the budget. It might help us in future planning.\n\nThanks,\nMike",
+        "cc": "",
+        "bcc": "",
+        "from": "mike@example.com",
+        "reply_to": "mike@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Budget Review Meeting",
+        "to": "sara@example.com, mike@example.com",
+        "body": "Great idea, Mike. I will add the details on the expenditures and prepare an overall comparison with our last year's budget.\n\nLooking forward to the meeting!\n\nBest,\nRyan",
+        "cc": "",
+        "bcc": "",
+        "from": "ryan@example.com",
+        "reply_to": "ryan@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Project Alpha Kick-off Meeting Details",
+        "to": "james@example.com, susan@example.com",
+        "body": "Hi everyone,\n\nI'm excited to announce that our Project Alpha kick-off meeting is scheduled for next Monday at 10 AM. We will discuss project scope, roles, and timelines. Please ensure your availability.\n\nLooking forward to seeing you all!\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kick-off Meeting Details",
+        "to": "michael@example.com",
+        "body": "Hi Michael,\n\nThanks for the update! I\u2019ll be there. Could you please share the agenda beforehand? It would help in preparing for our discussions.\n\nThanks,\nJames",
+        "cc": "susan@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kick-off Meeting Details",
+        "to": "james@example.com, michael@example.com",
+        "body": "James and Michael,\n\nI\u2019m looking forward to the meeting as well. Michael, could you include a list of team members involved in the project? It would be useful to know who will be working on which aspects.\n\nBest regards,\nSusan",
+        "cc": "",
+        "bcc": "",
+        "from": "susan@example.com",
+        "reply_to": "susan@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kick-off Meeting Details",
+        "to": "james@example.com, susan@example.com",
+        "body": "Great suggestions, James and Susan. I will send out the agenda along with the team member list by the end of the week. Thanks for your input!\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plans for November",
+        "to": "jessica@example.com, michael@example.com",
+        "body": "Hi team,\n\nI hope you're all doing well! I wanted to discuss our plans for the team outing next month. I propose we go for an escape room challenge followed by dinner on November 15th.\n\nPlease let me know your thoughts and availability!\n\nCheers,\nDaniel",
+        "cc": "sarah@example.com",
+        "bcc": "",
+        "from": "daniel@example.com",
+        "reply_to": "daniel@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "daniel@example.com",
+        "body": "Hi Daniel,\n\nSounds like a fun idea! Count me in for the escape room. I\u2019ll bring along some snacks for our dinner afterward.\n\nThanks for organizing this!\n\nBest,\nJessica",
+        "cc": "",
+        "bcc": "",
+        "from": "jessica@example.com",
+        "reply_to": "jessica@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "daniel@example.com, jessica@example.com",
+        "body": "Hi everyone,\n\nLove the idea! I can make it on the 15th too. Will we need to book in advance for the escape room? Please keep me posted!\n\nLooking forward to it,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "jessica@example.com, michael@example.com",
+        "body": "Fantastic! I\u2019ll take care of the booking for the escape room and send out a calendar invite for our dinner afterward. I\u2019ll aim to have everything setup by the end of the week.\n\nThanks for the prompt responses!\n\nCheers,\nDaniel",
+        "cc": "",
+        "bcc": "",
+        "from": "daniel@example.com",
+        "reply_to": "daniel@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning",
+        "to": "john@example.com, laura@example.com",
+        "body": "Hi team,\n\nI\u2019m excited to start planning our upcoming team outing! Please share your availability for the following options:\n\n1. Bowling - Friday evening\n2. Escape Room - Saturday afternoon\n3. Picnic in the park - Sunday noon\n\nLooking forward to your feedback!\n\nCheers,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for reaching out! I am available for the bowling outing on Friday. Escape Room sounds fun too, but I might have a scheduling conflict then. Let\u2019s discuss.\n\nBest,\nJohn",
+        "cc": "laura@example.com",
+        "bcc": "",
+        "from": "john@example.com",
+        "reply_to": "john@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "john@example.com, sarah@example.com",
+        "body": "Hey guys,\n\nI can make it to the bowling on Friday evening! Just let me know the final details once you have them.\n\nAlso, Sarah, I think a picnic sounds great! Count me in for that as well.\n\nCheers,\nLaura",
+        "cc": "",
+        "bcc": "",
+        "from": "laura@example.com",
+        "reply_to": "laura@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "john@example.com, laura@example.com",
+        "body": "Awesome, John and Laura! I\u2019ll finalize the details based on everyone's responses and send out a calendar invite. Looking forward to a fun outing!\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Weekly Team Sync - Agenda",
+        "to": "james@example.com, sarah@example.com, adam@example.com",
+        "body": "Hello team,\n\nThis is a reminder for our weekly sync scheduled for Friday at 10 AM. Please find below the agenda for our discussion:\n\n1. Project status updates\n2. Upcoming deadlines\n3. Any blockers?\n\nFeel free to add any other topics you would like to discuss.\n\nThanks,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Weekly Team Sync - Agenda",
+        "to": "emily@example.com",
+        "body": "Hi Emily,\n\nThanks for the reminder! I will have the project status report ready to share. Also, I\u2019d like to discuss the current workload for our team, as it's been quite heavy lately.\n\nSee you Friday!\n\nBest,\nJames",
+        "cc": "sarah@example.com, adam@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Weekly Team Sync - Agenda",
+        "to": "james@example.com, emily@example.com",
+        "body": "Hi all,\n\nI\u2019ll make sure to bring the update on our marketing campaign. Also, can we allocate some time to discuss the client feedback we've been receiving? It seems essential for the next phase of the project.\n\nThanks,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Weekly Team Sync - Agenda",
+        "to": "james@example.com, sarah@example.com",
+        "body": "Absolutely, Sarah! I will prepare a summary of the client feedback. Let's ensure we address these comments thoroughly in our meeting. Looking forward to everyone's inputs this Friday!\n\nCheers,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Project Alpha Update",
+        "to": "james@example.com, nora@example.com",
+        "body": "Hi everyone,\n\nI wanted to share the latest updates on Project Alpha. We've made significant progress over the past week:\n\n1. Finalized the design specifications\n2. Completed the initial testing phase\n3. Started drafting the project documentation\n\nLooking forward to our next catch-up.\n\nBest,\nSophie",
+        "cc": "laura@example.com",
+        "bcc": "",
+        "from": "sophie@example.com",
+        "reply_to": "sophie@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Update",
+        "to": "sophie@example.com",
+        "body": "Hi Sophie,\n\nThanks for the update! I'm glad to hear about the progress. Can you provide more details on the testing results? It would help us prepare for the next phase.\n\nBest,\nJames",
+        "cc": "",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Update",
+        "to": "sophie@example.com, james@example.com",
+        "body": "Sophie and James,\n\nI'm joining the request for more details. If we could have the testing results and any risks identified, it would greatly aid our planning session next week.\n\nThanks,\nNora",
+        "cc": "",
+        "bcc": "",
+        "from": "nora@example.com",
+        "reply_to": "nora@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Update",
+        "to": "james@example.com, nora@example.com",
+        "body": "Great points, James and Nora. I will compile the testing results and address any risks we've identified. Expect an update from me by the end of today!\n\nBest,\nSophie",
+        "cc": "",
+        "bcc": "",
+        "from": "sophie@example.com",
+        "reply_to": "sophie@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning - Ideas Needed",
+        "to": "john@example.com, sarah@example.com, emily@example.com",
+        "body": "Hi Team,\n\nI hope you're all doing well! As we begin planning our team outing for this quarter, I would love to hear your ideas on where we could go and what activities you would like to include.\n\nPlease share your thoughts by the end of the week so we can finalize our plans.\n\nThanks,\nDavid",
+        "cc": "",
+        "bcc": "",
+        "from": "david@example.com",
+        "reply_to": "david@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning - Ideas Needed",
+        "to": "david@example.com",
+        "body": "Hi David,\n\nThanks for reaching out! I think a day at the amusement park would be fun, especially with some team-building activities in the mix.\n\nLooking forward to hearing what others think!\n\nBest,\nJohn",
+        "cc": "",
+        "bcc": "",
+        "from": "john@example.com",
+        "reply_to": "john@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning - Ideas Needed",
+        "to": "david@example.com, john@example.com",
+        "body": "Hi David and John,\n\nGreat idea, John! I also think a picnic in the park could be a nice casual option. We could have some games and maybe even a barbecue.\n\nLooking forward to more suggestions!\n\nCheers,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning - Ideas Needed",
+        "to": "john@example.com, emily@example.com",
+        "body": "Thanks for the suggestions, John and Emily! Both the amusement park and a park picnic sound like great options. How about we create a quick poll to see what everyone prefers?\n\nLet me know if that works!\n\nBest,\nDavid",
+        "cc": "",
+        "bcc": "",
+        "from": "david@example.com",
+        "reply_to": "david@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning Update",
+        "to": "mike@example.com, sarah@example.com, jennifer@example.com",
+        "body": "Hi everyone,\n\nI wanted to provide an update regarding our team outing planned for next month. The destination has been confirmed as Pinewood Park.\n\nPlease review the following details:\n\n1. Date: Saturday, March 12th\n2. Time: 10 AM to 4 PM\n3. Activities: Hiking, team games, and picnic lunch\n\nLooking forward to a great day with all of you!\n\nBest,\nEmma",
+        "cc": "",
+        "bcc": "",
+        "from": "emma@example.com",
+        "reply_to": "emma@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning Update",
+        "to": "emma@example.com",
+        "body": "Hi Emma,\n\nThanks for the update! Pinewood Park sounds fantastic. I can help with organizing the picnic lunch if needed. Should we also consider any dietary restrictions from the team?\n\nBest,\nMike",
+        "cc": "sarah@example.com",
+        "bcc": "",
+        "from": "mike@example.com",
+        "reply_to": "mike@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning Update",
+        "to": "mike@example.com, emma@example.com",
+        "body": "Mike and Emma,\n\nI'm excited for the outing! I think we should check for dietary needs and have vegetarian options available. Additionally, who will be responsible for the games?\n\nThanks,\nJennifer",
+        "cc": "",
+        "bcc": "",
+        "from": "jennifer@example.com",
+        "reply_to": "jennifer@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning Update",
+        "to": "mike@example.com, jennifer@example.com",
+        "body": "Great point, Jennifer! I can take charge of organizing the games and activities. Mike, let\u2019s collaborate on the lunch arrangements to ensure everyone is considered.\n\nLooking forward to it!\n\nBest,\nEmma",
+        "cc": "",
+        "bcc": "",
+        "from": "emma@example.com",
+        "reply_to": "emma@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "End-of-Year Financial Review Preparation",
+        "to": "james@example.com, laura@example.com",
+        "body": "Hello team,\n\nAs we prepare for the end-of-year financial review, I wanted to schedule a meeting to discuss our findings and recommendations. Please review the attached documents before our meeting.\n\nLooking forward to your insights.\n\nThanks,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: End-of-Year Financial Review Preparation",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for sharing the documents. I will go through them and be ready with my thoughts. Can we aim for Wednesday afternoon for the meeting?\n\nBest,\nJames",
+        "cc": "laura@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: End-of-Year Financial Review Preparation",
+        "to": "james@example.com, sarah@example.com",
+        "body": "James and Sarah,\n\nWednesday afternoon works for me, but I will need some time to gather additional data on our spending trends. I\u2019ll have everything ready by early Wednesday.\n\nThanks,\nLaura",
+        "cc": "",
+        "bcc": "",
+        "from": "laura@example.com",
+        "reply_to": "laura@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: End-of-Year Financial Review Preparation",
+        "to": "james@example.com, laura@example.com",
+        "body": "Thanks for confirming, Laura and James. Let's plan for Wednesday at 3 PM. I'll ensure I have the necessary materials ready for a fruitful discussion.\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning Discussion",
+        "to": "jennifer@example.com, michael@example.com",
+        "body": "Hi Team,\n\nI hope everyone is doing well! I'm reaching out to discuss our upcoming team outing. I have a few ideas for activities and locations. Let's brainstorm during our meeting this week.\n\nPlease send me your thoughts or any suggestions you might have.\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning Discussion",
+        "to": "sarah@example.com",
+        "body": "Hey Sarah,\n\nThanks for kicking off the discussion! I'm excited about the team outing. I think a picnic at the park could be a fun idea. Plus, we can play some outdoor games!\n\nLooking forward to hearing what others think.\n\nCheers,\nJennifer",
+        "cc": "",
+        "bcc": "",
+        "from": "jennifer@example.com",
+        "reply_to": "jennifer@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning Discussion",
+        "to": "sarah@example.com, jennifer@example.com",
+        "body": "Hi Sarah and Jennifer,\n\nI love the picnic idea! I can help organize that. Additionally, we should consider food options. Maybe we could do a potluck-style lunch? Everyone brings something to share!\n\nLet me know your thoughts.\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning Discussion",
+        "to": "jennifer@example.com, michael@example.com",
+        "body": "Great suggestions, Jennifer and Michael! A potluck sounds perfect. We could also set up some games for the day. How about a friendly sports match? I'll take care of sending invites and details once we finalize the plan.\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Kickoff for New Marketing Campaign",
+        "to": "jennifer@example.com, michael@example.com",
+        "body": "Hi everyone,\n\nI'm excited to kick off our new marketing campaign! In our initial meeting, we will discuss the following:\n\n1. Goals and objectives\n2. Target audience\n3. Creative concepts\n\nPlease see the attached document for more details. Let's meet on Friday at 10 AM.\n\nCheers,\nDavid",
+        "cc": "laura@example.com",
+        "bcc": "",
+        "from": "david@example.com",
+        "reply_to": "david@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Kickoff for New Marketing Campaign",
+        "to": "david@example.com",
+        "body": "Hi David,\n\nThanks for the overview! I\u2019ve reviewed the attached document, and it looks promising. Can we discuss potential media channels during the meeting?\n\nBest,\nJennifer",
+        "cc": "michael@example.com",
+        "bcc": "",
+        "from": "jennifer@example.com",
+        "reply_to": "jennifer@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Kickoff for New Marketing Campaign",
+        "to": "jennifer@example.com, david@example.com",
+        "body": "Jennifer and David,\n\nI\u2019d like to add that we should also consider our budget limits and potential ROI analysis. Looking forward to our meeting!\n\nThanks,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Kickoff for New Marketing Campaign",
+        "to": "jennifer@example.com, michael@example.com",
+        "body": "Great suggestions, both! I\u2019ll add a section on media channels and budget analysis to the agenda. Looking forward to seeing everyone on Friday!\n\nBest,\nDavid",
+        "cc": "",
+        "bcc": "",
+        "from": "david@example.com",
+        "reply_to": "david@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Details",
+        "to": "susan@example.com, john@example.com, lisa@example.com",
+        "body": "Hi Team,\n\nI\u2019m excited to share that our team outing is scheduled for next Friday! Here are the details:\n\nDate: October 13, 2023\nTime: 4 PM - 8 PM\nLocation: Riverside Park, Pavilion 3\n\nPlease RSVP by Tuesday and let me know if you have any dietary restrictions.\n\nLooking forward to a fun time!\n\nCheers,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Details",
+        "to": "emily@example.com",
+        "body": "Hi Emily,\n\nThanks for organizing! Count me in for the outing. As for dietary restrictions, I\u2019m vegetarian, so please keep that in mind.\n\nBest,\nJohn",
+        "cc": "",
+        "bcc": "",
+        "from": "john@example.com",
+        "reply_to": "john@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Details",
+        "to": "emily@example.com, john@example.com",
+        "body": "Emily and John,\n\nI\u2019m looking forward to the outing as well! I don\u2019t have any dietary restrictions. Can we also discuss team goals for next quarter during the event?\n\nThanks,\nLisa",
+        "cc": "",
+        "bcc": "",
+        "from": "lisa@example.com",
+        "reply_to": "lisa@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Details",
+        "to": "susan@example.com, john@example.com, lisa@example.com",
+        "body": "Great to hear from both of you! I\u2019ll make sure to accommodate John\u2019s dietary needs. And yes, Lisa, adding a discussion on team goals is a fantastic idea. Let\u2019s get some input from everyone to make it productive!\n\nBest,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plans for Next Month",
+        "to": "linda@example.com, kevin@example.com, wayne@example.com",
+        "body": "Hi Team,\n\nI'd like to discuss our plans for a team outing next month. Here are a few ideas:\n\n1. Bowling night\n2. Escape room challenge\n3. Outdoor picnic\n\nPlease let me know your thoughts and availability so we can finalize the details!\n\nCheers,\nJessica",
+        "cc": "",
+        "bcc": "",
+        "from": "jessica@example.com",
+        "reply_to": "jessica@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for Next Month",
+        "to": "jessica@example.com",
+        "body": "Hi Jessica,\n\nThanks for the message! I think an outdoor picnic would be a great idea, especially if the weather is nice. I'm available on most weekends if that works for everyone.\n\nLet me know what others think!\n\nBest,\nLinda",
+        "cc": "kevin@example.com",
+        "bcc": "",
+        "from": "linda@example.com",
+        "reply_to": "linda@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for Next Month",
+        "to": "linda@example.com, jessica@example.com",
+        "body": "Jessica and Linda,\n\nI agree with Linda! A picnic sounds perfect. We could even do it potluck style to make it more fun. I'm free on the last Sunday of the month if that works for everyone.\n\nLooking forward to it!\n\nBest,\nKevin",
+        "cc": "",
+        "bcc": "",
+        "from": "kevin@example.com",
+        "reply_to": "kevin@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for Next Month",
+        "to": "linda@example.com, kevin@example.com",
+        "body": "Sounds great, Linda and Kevin! I'll set up a Doodle poll to find everyone's availability for the last Sunday. Let's also brainstorm some food ideas for the potluck.\n\nThanks for the quick responses!\n\nCheers,\nJessica",
+        "cc": "",
+        "bcc": "",
+        "from": "jessica@example.com",
+        "reply_to": "jessica@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plans for November",
+        "to": "jason@example.com, lydia@example.com",
+        "body": "Hi Team,\n\nI'm excited to start planning our annual team outing! Here are a few ideas I thought we could consider:\n\n1. Bowling Night\n2. Escape Room Challenge\n3. Outdoor Picnic at the park\n\nPlease let me know your preferences by the end of the week so we can finalize arrangements.\n\nCheers,\nEmily",
+        "cc": "marco@example.com",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "emily@example.com",
+        "body": "Hi Emily,\n\nThanks for the email! I love the idea of an escape room challenge. It sounds like a great way to build teamwork!\n\nBest,\nJason",
+        "cc": "",
+        "bcc": "",
+        "from": "jason@example.com",
+        "reply_to": "jason@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "jason@example.com, emily@example.com",
+        "body": "Hi Jason and Emily,\n\nI agree! An escape room would be fun, but I also like the idea of a picnic. It would give us a chance to relax outdoors. Could we possibly do both?\n\nThanks,\nLydia",
+        "cc": "",
+        "bcc": "",
+        "from": "lydia@example.com",
+        "reply_to": "lydia@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "jason@example.com, lydia@example.com",
+        "body": "Great feedback, Jason and Lydia! How about we start with the escape room and then have a picnic right after? I\u2019ll look into venues for both activities and get back to you.\n\nLooking forward to it!\n\nCheers,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plans Discussion",
+        "to": "lisa@example.com, jason@example.com",
+        "body": "Hi Team,\n\nI hope everyone is well. Let's discuss our upcoming team outing. Here are some initial thoughts:\n\n1. Location: Either the beach or the mountains\n2. Activities: Hiking, games, and a barbecue\n3. Date: Looking at the last weekend of the month\n\nPlease share your thoughts on this.\n\nBest,\nTom",
+        "cc": "",
+        "bcc": "",
+        "from": "tom@example.com",
+        "reply_to": "tom@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans Discussion",
+        "to": "tom@example.com",
+        "body": "Hi Tom,\n\nThanks for the email! I prefer the beach for our outing; it has a more relaxed vibe. I'm also onboard with the dates you suggested.\n\nLooking forward to hearing what everyone thinks.\n\nCheers,\nLisa",
+        "cc": "",
+        "bcc": "",
+        "from": "lisa@example.com",
+        "reply_to": "lisa@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans Discussion",
+        "to": "tom@example.com, lisa@example.com",
+        "body": "Tom and Lisa,\n\nBeach sounds fantastic! I would also suggest bringing some outdoor games. Maybe a volleyball or frisbee? \n\nAlso, a quick reminder - we need to finalize logistics like transportation and food.\n\nThanks,\nJason",
+        "cc": "",
+        "bcc": "",
+        "from": "jason@example.com",
+        "reply_to": "jason@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans Discussion",
+        "to": "lisa@example.com, jason@example.com",
+        "body": "Great suggestions, Lisa and Jason! Let\u2019s finalize the beach venue and set a time for transportation. I can handle the barbecue arrangements.\n\nI'll reach out again once I have some more details.\n\nBest,\nTom",
+        "cc": "",
+        "bcc": "",
+        "from": "tom@example.com",
+        "reply_to": "tom@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning",
+        "to": "jessica@example.com, tom@example.com, daniel@example.com",
+        "body": "Hi team,\n\nI hope everyone is doing well! I wanted to discuss planning our upcoming team outing. Please share your thoughts on potential dates and activities. I think it would be great to have some fun outside of work.\n\nLooking forward to your suggestions!\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for initiating the conversation! How about aiming for the last Saturday of this month? I think a picnic in the park could be fun and relaxing. Let me know your thoughts!\n\nBest,\nJessica",
+        "cc": "",
+        "bcc": "",
+        "from": "jessica@example.com",
+        "reply_to": "jessica@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com, jessica@example.com",
+        "body": "Great idea, Jessica! A picnic sounds fantastic. I can also bring some games and snacks to share. Sarah, when you have a final date, let us know, and we can start coordinating.\n\nBest,\nTom",
+        "cc": "",
+        "bcc": "",
+        "from": "tom@example.com",
+        "reply_to": "tom@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "jessica@example.com, tom@example.com",
+        "body": "I love the idea of a picnic! Let's confirm the date soon so we can start planning the details. Tom, your idea of bringing games is awesome! Can't wait!\n\nBest,\nDaniel",
+        "cc": "",
+        "bcc": "",
+        "from": "daniel@example.com",
+        "reply_to": "daniel@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Annual Budget Review Meeting",
+        "to": "james@example.com, emily@example.com",
+        "body": "Hi team,\n\nI'm writing to confirm our budget review meeting scheduled for next Tuesday at 10 AM. Please come prepared with your department's budget proposals and any adjustments that may be necessary.\n\nBest,\nMatthew",
+        "cc": "robert@example.com",
+        "bcc": "",
+        "from": "matthew@example.com",
+        "reply_to": "matthew@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Annual Budget Review Meeting",
+        "to": "matthew@example.com",
+        "body": "Hi Matthew,\n\nThanks for the reminder! I'll make sure to have our proposals ready for the meeting. Would you like us to include past year's expenditures for comparison?\n\nBest,\nJames",
+        "cc": "emily@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Annual Budget Review Meeting",
+        "to": "james@example.com, matthew@example.com",
+        "body": "Matthew and James,\n\nIt would be helpful to include the previous year's expenditures in our presentation. I can prepare a comparative analysis for the meeting.\n\nLooking forward to collaborating on this.\n\nBest,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Annual Budget Review Meeting",
+        "to": "james@example.com, emily@example.com",
+        "body": "Sounds good to me! James and Emily, let's ensure we have all the necessary figures ready. Emily, your analysis will be a great addition.\n\nThanks,\nMatthew",
+        "cc": "",
+        "bcc": "",
+        "from": "matthew@example.com",
+        "reply_to": "matthew@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plans for November",
+        "to": "julia@example.com, david@example.com",
+        "body": "Hi everyone,\n\nI hope this message finds you well! I wanted to discuss our upcoming team outing. Here are a few ideas I had in mind:\n\n1. Bowling night at Lucky Strikes\n2. Dinner at The Italian Bistro\n3. Afternoon at the local escape room\n\nPlease let me know your preferences or any other suggestions you might have.\n\nThanks,\nMax",
+        "cc": "",
+        "bcc": "",
+        "from": "max@example.com",
+        "reply_to": "max@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "max@example.com",
+        "body": "Hi Max,\n\nThanks for putting these options together! I'm definitely leaning towards the bowling night. It's been a while since we had a casual team event.\n\nI'll wait to hear what everyone else thinks before making any final decisions.\n\nBest,\nJulia",
+        "cc": "david@example.com",
+        "bcc": "",
+        "from": "julia@example.com",
+        "reply_to": "julia@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "julia@example.com, max@example.com",
+        "body": "Hi Julia and Max,\n\nI like the idea of the bowling night as well! It's a fun way to unwind and bond as a team. If we do that, I can handle the reservations. \n\nLooking forward to hearing more thoughts!\n\nCheers,\nDavid",
+        "cc": "",
+        "bcc": "",
+        "from": "david@example.com",
+        "reply_to": "david@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans for November",
+        "to": "julia@example.com, david@example.com",
+        "body": "Awesome feedback, guys! Let's aim for the bowling night then. David, once we finalize the date, I'll coordinate the rest accordingly! Thanks for your input!\n\nBest,\nMax",
+        "cc": "",
+        "bcc": "",
+        "from": "max@example.com",
+        "reply_to": "max@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Building Event - Save the Date!",
+        "to": "james@example.com, emily@example.com, sophia@example.com",
+        "body": "Hello team,\n\nI am excited to announce that we have scheduled a team building event for next month! Please mark your calendars for November 15th. \n\nWe will have various activities planned to strengthen our collaboration and team spirit. \n\nFurther details will follow soon.\n\nBest,\nMichael",
+        "cc": "manager@example.com",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Building Event - Save the Date!",
+        "to": "michael@example.com",
+        "body": "Hi Michael,\n\nThanks for the update! I'm looking forward to the event. Do we already have a location in mind, or are we still deciding? \n\nBest,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Building Event - Save the Date!",
+        "to": "michael@example.com, emily@example.com",
+        "body": "Hi Michael and Emily,\n\nThis sounds great! I suggest we incorporate some fun challenges to keep the energy high. Also, a group lunch could be a good idea.\n\nLooking forward to more details!\n\nCheers,\nJames",
+        "cc": "",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Building Event - Save the Date!",
+        "to": "james@example.com, emily@example.com",
+        "body": "Thanks for the suggestions, James! I will definitely consider those ideas. Let's aim to finalize the location by next week so we can move forward with planning.\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning",
+        "to": "james@example.com, emily@example.com",
+        "body": "Hi team,\n\nI hope you all are doing well! I'm reaching out to start planning our upcoming team outing. Here are a few ideas:\n\n1. Bowling night\n2. Escape room challenge\n3. Outdoor picnic at the park\n\nPlease share your preferences by the end of the week!\n\nThanks,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for starting the planning! I\u2019m in for the outdoor picnic. It would be great to enjoy some fresh air and have relaxed time together.\n\nLet me know if you need help organizing.\n\nBest,\nJames",
+        "cc": "emily@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com, james@example.com",
+        "body": "Hey Sarah and James,\n\nI love the idea of the picnic! It\u2019s a nice way to unwind. I can help with securing the area and coordinating snacks.\n\nLet\u2019s finalize the details soon.\n\nCheers,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "james@example.com, emily@example.com",
+        "body": "Great feedback, James and Emily! Let\u2019s aim for next Saturday for the picnic. I\u2019ll start a list of what to bring and share it with you.\n\nThanks for being proactive!\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Project Update - Milestone Achieved",
+        "to": "sarah@example.com, josh@example.com",
+        "body": "Hi Team,\n\nI'm excited to share that we've reached a significant milestone in our project! We completed the development phase ahead of schedule and are now moving into testing.\n\nHere are the next steps we need to focus on:\n1. Sarah - coordinate with the QA team.\n2. Josh - compile documentation for the deployment.\n3. Everyone - prepare for the upcoming client demo next week.\n\nLet me know if you have any questions!\n\nBest,\nMike",
+        "cc": "linda@example.com",
+        "bcc": "",
+        "from": "mike@example.com",
+        "reply_to": "mike@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Project Update - Milestone Achieved",
+        "to": "mike@example.com",
+        "body": "Hi Mike,\n\nGreat news on the milestone! I'll start coordinating with the QA team right away. Can you provide the testing timeline once it's available?\n\nThanks,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Project Update - Milestone Achieved",
+        "to": "mike@example.com, sarah@example.com",
+        "body": "Mike and Sarah,\n\nAwesome progress, team! I'll work on the documentation and ensure everything is up to date for deployment. Sarah, let me know if you need any supporting information from my end.\n\nBest,\nJosh",
+        "cc": "",
+        "bcc": "",
+        "from": "josh@example.com",
+        "reply_to": "josh@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Project Update - Milestone Achieved",
+        "to": "sarah@example.com, josh@example.com",
+        "body": "Thanks for the updates, everyone! I\u2019ll prepare the demo presentation and send it out for review by the end of the week. Let's aim to impress our clients!\n\nBest,\nMike",
+        "cc": "",
+        "bcc": "",
+        "from": "mike@example.com",
+        "reply_to": "mike@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning",
+        "to": "james@example.com, lara@example.com",
+        "body": "Hi Team,\n\nI hope this message finds you well! I wanted to start planning for our upcoming team outing. Here are a few ideas I've gathered:\n\n1. Bowling night\n2. Escape room experience\n3. Outdoor picnic at Central Park\n\nPlease send me your preferences or any other ideas you may have\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for kicking off the team outing plans! I'm definitely in for the bowling night - it sounds fun! \n\nAlso, I think the escape room could be a great team-building experience.\n\nLooking forward to hearing what everyone else thinks!\n\nBest,\nJames",
+        "cc": "lara@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "james@example.com, sarah@example.com",
+        "body": "Hey Sarah and James,\n\nBoth ideas sound great! I'd prefer the outdoor picnic at Central Park. We can enjoy some fresh air and have a more relaxed setting. \n\nAlso, I can help coordinate the food arrangements if needed.\n\nBest,\nLara",
+        "cc": "",
+        "bcc": "",
+        "from": "lara@example.com",
+        "reply_to": "lara@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "james@example.com, lara@example.com",
+        "body": "Thanks for your input, Lara and James! I'm glad everyone is excited. Let's have a quick meeting this week to finalize the plans. \n\nPlease let me know your available times.\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning",
+        "to": "jennifer@example.com, mike@example.com, tom@example.com",
+        "body": "Hi Team,\n\nI wanted to start planning our upcoming team outing. Please share your availability for the next few weekends so we can finalize a date that works for everyone.\n\nLooking forward to hearing your ideas!\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nI'm available next weekend and the weekend after that. I love the idea of a team outing! Do you have any specific activities in mind?\n\nThanks,\nJennifer",
+        "cc": "",
+        "bcc": "",
+        "from": "jennifer@example.com",
+        "reply_to": "jennifer@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com, jennifer@example.com",
+        "body": "Hi Sarah and Jennifer,\n\nI\u2019m also free next weekend! I think a picnic or some outdoor games would be fun. Let\u2019s discuss more ideas!\n\nCheers,\nMike",
+        "cc": "",
+        "bcc": "",
+        "from": "mike@example.com",
+        "reply_to": "mike@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "sarah@example.com, jennifer@example.com, mike@example.com",
+        "body": "Hi everyone,\n\nI\u2019m in for any of those ideas! I can also check if we can get a reservation at the local park. Looking forward to finalizing the plans!\n\nBest,\nTom",
+        "cc": "",
+        "bcc": "",
+        "from": "tom@example.com",
+        "reply_to": "tom@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Project Alpha Feedback Request",
+        "to": "jessica@example.com, michael@example.com",
+        "body": "Hello team,\n\nI hope this message finds you well. I'm currently gathering feedback on Project Alpha. Please share your thoughts on the initial design and any improvements you think are necessary.\n\nLooking forward to your input!\n\nBest,\nNina",
+        "cc": "",
+        "bcc": "",
+        "from": "nina@example.com",
+        "reply_to": "nina@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Feedback Request",
+        "to": "nina@example.com",
+        "body": "Hi Nina,\n\nThanks for reaching out! I reviewed the initial design and I think it looks great overall. However, I believe we should improve the user interface for better accessibility. \n\nLet me know if you need more details.\n\nBest,\nJessica",
+        "cc": "",
+        "bcc": "",
+        "from": "jessica@example.com",
+        "reply_to": "jessica@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Feedback Request",
+        "to": "nina@example.com, jessica@example.com",
+        "body": "Nina and Jessica,\n\nI also think the initial design has promise. I would recommend adjusting the color scheme to enhance visual clarity. Additionally, we might want to consider user testing with a few target market participants for more comprehensive feedback.\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Feedback Request",
+        "to": "jessica@example.com, michael@example.com",
+        "body": "Thanks for the suggestions, Jessica and Michael! I will gather all feedback and compile a list of recommendations for our next meeting. Let's aim to finalize the design by the end of next week.\n\nBest,\nNina",
+        "cc": "",
+        "bcc": "",
+        "from": "nina@example.com",
+        "reply_to": "nina@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Project Update: Marketing Campaign Launch",
+        "to": "laura@example.com, tom@example.com",
+        "body": "Hi team,\n\nI wanted to share a quick update regarding our marketing campaign launch scheduled for next week. Here are the key points to note:\n\n1. Final ad creatives are due by Wednesday.\n2. Social media posts need to be scheduled for Thursday.\n3. Let's plan a brief check-in on Friday to discuss the launch strategy.\n\nThanks,\nDavid",
+        "cc": "sarah@example.com",
+        "bcc": "",
+        "from": "david@example.com",
+        "reply_to": "david@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Project Update: Marketing Campaign Launch",
+        "to": "david@example.com",
+        "body": "Hi David,\n\nThanks for the update! I'll ensure the ad creatives are ready by Wednesday EOD. Could you confirm the platform for scheduling the social media posts?\n\nBest,\nLaura",
+        "cc": "",
+        "bcc": "",
+        "from": "laura@example.com",
+        "reply_to": "laura@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Project Update: Marketing Campaign Launch",
+        "to": "laura@example.com, david@example.com",
+        "body": "Laura and David,\n\nThanks for the update. I suggest we also prepare a FAQ document for common queries that may arise once the campaign goes live. \n\nLet me know your thoughts!\n\nCheers,\nTom",
+        "cc": "sarah@example.com",
+        "bcc": "",
+        "from": "tom@example.com",
+        "reply_to": "tom@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Project Update: Marketing Campaign Launch",
+        "to": "laura@example.com, tom@example.com",
+        "body": "Great idea, Tom! I can help draft the FAQ document. Laura, let's finalize the ad creatives first, then we can work on the FAQ together.\n\nThanks,\nDavid",
+        "cc": "",
+        "bcc": "",
+        "from": "david@example.com",
+        "reply_to": "david@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Project Alpha Kickoff Meeting Invitation",
+        "to": "james@company.com, patricia@company.com",
+        "body": "Hi Team,\n\nI'm excited to announce the kickoff meeting for Project Alpha. Please find the details below:\n\nDate: Monday, November 10th\nTime: 10:00 AM - 11:00 AM\nLocation: Conference Room B\n\nWe'll discuss the project objectives, timeline, and team responsibilities.\n\nLooking forward to seeing everyone there!\n\nBest,\nEmily",
+        "cc": "mark@company.com, sophia@company.com",
+        "bcc": "",
+        "from": "emily@company.com",
+        "reply_to": "emily@company.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kickoff Meeting Invitation",
+        "to": "emily@company.com",
+        "body": "Hi Emily,\n\nThanks for sending this out! I\u2019ll be there. Are we expecting to have any external stakeholders in attendance?\n\nBest,\nJames",
+        "cc": "",
+        "bcc": "",
+        "from": "james@company.com",
+        "reply_to": "james@company.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kickoff Meeting Invitation",
+        "to": "james@company.com, emily@company.com",
+        "body": "James and Emily,\n\nI plan to attend and think it's a good idea to invite Todd and Vanessa from Marketing as they will need to support our efforts.\n\nLet's discuss at the meeting!\n\nThanks,\nPatricia",
+        "cc": "",
+        "bcc": "",
+        "from": "patricia@company.com",
+        "reply_to": "patricia@company.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Project Alpha Kickoff Meeting Invitation",
+        "to": "james@company.com, patricia@company.com",
+        "body": "Great suggestion, Patricia! I\u2019ll make sure to extend the invitation. Also, let\u2019s gather some initial ideas on the project deliverables before the meeting.\n\nSee you all on Monday!\n\nBest,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@company.com",
+        "reply_to": "emily@company.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Website Redesign Project Kickoff",
+        "to": "jessica@example.com, michael@example.com",
+        "body": "Hello team,\n\nI'm excited to kick off the website redesign project! Attached are the initial mockups and project timeline. Please review them before our first meeting.\n\nKey discussion points:\n1. Design elements\n2. User experience goals\n3. Project milestones\n\nLet me know if you have any questions.\n\nBest regards,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Website Redesign Project Kickoff",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for sharing the mockups! I have a few suggestions regarding the design elements that we can discuss in our meeting. I believe focusing on mobile responsiveness is crucial for this project.\n\nCheers,\nJessica",
+        "cc": "",
+        "bcc": "",
+        "from": "jessica@example.com",
+        "reply_to": "jessica@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Website Redesign Project Kickoff",
+        "to": "sarah@example.com, jessica@example.com",
+        "body": "Hi Sarah and Jessica,\n\nI agree with Jessica's points. Additionally, I think it would be beneficial to gather some user feedback on the mockups before finalizing the design. Let's ensure that we cater to the users' needs effectively.\n\nLooking forward to our discussion!\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Website Redesign Project Kickoff",
+        "to": "jessica@example.com, michael@example.com",
+        "body": "Great suggestions, Jessica and Michael! Let's plan to incorporate user feedback into our next steps. I'll gather some insights from previous user surveys to share during our meeting.\n\nThanks,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plan for November",
+        "to": "sarah@example.com, john@example.com",
+        "body": "Hello everyone,\n\nI hope this email finds you well! I'm excited to start planning our team outing for November. Here are a few ideas I would like us to consider:\n\n1. Bowling night\n2. Escape room adventure\n3. Outdoor picnic\n\nPlease reply with your preference or any other suggestions you might have!\n\nThanks,\nMia",
+        "cc": "",
+        "bcc": "",
+        "from": "mia@example.com",
+        "reply_to": "mia@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plan for November",
+        "to": "mia@example.com",
+        "body": "Hi Mia,\n\nThanks for initiating the team outing planning! I\u2019m really looking forward to it. Personally, I think an outdoor picnic would be a great option, especially with the fall weather!\n\nBest,\nJohn",
+        "cc": "sarah@example.com",
+        "bcc": "",
+        "from": "john@example.com",
+        "reply_to": "john@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plan for November",
+        "to": "mia@example.com, john@example.com",
+        "body": "Mia and John,\n\nI love the idea of a picnic too! It would be nice to have some fun in the sun while enjoying the beautiful fall colors. Plus, we can incorporate some team-building games!\n\nLooking forward to hearing what everyone else thinks.\n\nCheers,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plan for November",
+        "to": "john@example.com, sarah@example.com",
+        "body": "Perfect! A picnic it is! I'll start checking for potential locations and catering options. Let\u2019s finalize the date as soon as we have more responses.\n\nThanks for the input!\n\nBest,\nMia",
+        "cc": "",
+        "bcc": "",
+        "from": "mia@example.com",
+        "reply_to": "mia@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Product Launch Recap",
+        "to": "team@example.com, lucy@example.com",
+        "body": "Hi everyone,\n\nThank you all for your hard work on the product launch this week. Here\u2019s a quick recap of our outcomes:\n\n1. Initial sales exceeded forecasts by 20%.\n2. Positive feedback from our beta users.\n3. We gained over 500 new subscribers in just three days.\n\nLet's discuss next steps in our follow-up meeting next week.\n\nCheers,\nDavid",
+        "cc": "marketing@example.com",
+        "bcc": "",
+        "from": "david@example.com",
+        "reply_to": "david@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Product Launch Recap",
+        "to": "david@example.com",
+        "body": "Hi David,\n\nThanks for the update! That\u2019s excellent news about the sales. Do we have any insights on customer demographics?\n\nAlso, I think it would be beneficial to gather some testimonials from our early users for our marketing materials.\n\nBest,\nLucy",
+        "cc": "",
+        "bcc": "",
+        "from": "lucy@example.com",
+        "reply_to": "lucy@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Product Launch Recap",
+        "to": "david@example.com, lucy@example.com",
+        "body": "Hi team,\n\nGreat recap, David! I\u2019ll coordinate with the marketing team to gather the demographics and user feedback. Lucy, your idea about testimonials is spot on; let\u2019s make sure to feature them prominently.\n\nLooking forward to our follow-up!\n\nBest,\nMike",
+        "cc": "",
+        "bcc": "",
+        "from": "mike@example.com",
+        "reply_to": "mike@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Product Launch Recap",
+        "to": "david@example.com, lucy@example.com, mike@example.com",
+        "body": "Thanks everyone! I appreciate the great teamwork. Let\u2019s make sure we keep up the momentum and address any feedback quickly to maintain our sales momentum.\n\nDavid, I\u2019ll follow up on the customer demographics. Mike, let\u2019s sync up on the testimonials next week.\n\nBest,\nLucy",
+        "cc": "",
+        "bcc": "",
+        "from": "lucy@example.com",
+        "reply_to": "lucy@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Client Feedback on Proposal",
+        "to": "julia@example.com, nathan@example.com",
+        "body": "Hi Team,\n\nWe received the client's feedback on our proposal. Here are their main points:\n\n1. They appreciated the overall concept but requested more detailed financial projections.\n2. They would like to see alternative options for the timeline.\n3. They raised concerns about potential risks outlined in the document.\n\nLet's discuss how to address these points in our next meeting.\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Client Feedback on Proposal",
+        "to": "michael@example.com",
+        "body": "Hi Michael,\n\nThanks for the update! I can start revising the financial projections right away. Would it be okay to have this done by Tuesday? \n\nAlso, should we consider setting up a meeting with the client to clarify their concerns?\n\nBest,\nJulia",
+        "cc": "nathan@example.com",
+        "bcc": "",
+        "from": "julia@example.com",
+        "reply_to": "julia@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Client Feedback on Proposal",
+        "to": "michael@example.com, julia@example.com",
+        "body": "Julia and Michael,\n\nI think clarifying the client's concerns is a good idea. Additionally, if we can prepare a couple of timeline options by the meeting, it will show that we're proactive. \n\nLooking forward to collaborating on this.\n\nBest,\nNathan",
+        "cc": "",
+        "bcc": "",
+        "from": "nathan@example.com",
+        "reply_to": "nathan@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Client Feedback on Proposal",
+        "to": "julia@example.com, nathan@example.com",
+        "body": "Great suggestions, Julia and Nathan. Let\u2019s make sure we have everything ready by Tuesday and schedule a meeting with the client for Wednesday to discuss the revisions. I\u2019ll coordinate that and keep you updated.\n\nBest,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Plans",
+        "to": "james@example.com, sarah@example.com",
+        "body": "Hi Team,\n\nI'm excited to announce we are planning a team outing for next month! Here are some ideas I have in mind:\n\n1. Hiking trip to the mountains\n2. Bowling night\n3. Escape room challenge\n\nPlease let me know your preference by the end of the week.\n\nCheers,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans",
+        "to": "emily@example.com",
+        "body": "Hi Emily,\n\nThanks for organizing this! I personally would love to go for the hiking trip; it sounds fantastic! Count me in.\n\nBest,\nJames",
+        "cc": "sarah@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans",
+        "to": "james@example.com, emily@example.com",
+        "body": "James and Emily,\n\nHiking sounds amazing! I'd like to join as well. Do we have a date in mind yet? Looking forward to it!\n\nThanks,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Plans",
+        "to": "james@example.com, sarah@example.com",
+        "body": "Awesome! I'm glad you both like the hiking idea. Let's say we plan for the third Saturday of next month? I can make arrangements once we finalize the date!\n\nCheers,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "New Product Launch Review Meeting",
+        "to": "samantha@example.com, james@example.com",
+        "body": "Hi Team,\n\nI would like to schedule a review meeting for the upcoming product launch. Please find below the proposed agenda:\n\n1. Overview of product features\n2. Marketing strategy\n3. Sales projections\n4. Launch timeline\n\nPlease let me know your available times for next week.\n\nThanks,\nMichael",
+        "cc": "laura@example.com",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: New Product Launch Review Meeting",
+        "to": "michael@example.com",
+        "body": "Hi Michael,\n\nThanks for the agenda! I\u2019m available for the meeting on Wednesday after 2 PM. Let me know if that works for everyone.\n\nBest,\nSamantha",
+        "cc": "",
+        "bcc": "",
+        "from": "samantha@example.com",
+        "reply_to": "samantha@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: New Product Launch Review Meeting",
+        "to": "michael@example.com, samantha@example.com",
+        "body": "Michael and Samantha,\n\nWednesday works for me as well. I can adjust my schedule to be available anytime after 1 PM.\n\nBest,\nJames",
+        "cc": "",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: New Product Launch Review Meeting",
+        "to": "samantha@example.com, james@example.com",
+        "body": "Great! I\u2019ll send out a calendar invite for Wednesday at 1:30 PM. looking forward to our discussion.\n\nThanks,\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@example.com",
+        "reply_to": "michael@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Planning",
+        "to": "james@example.com, nora@example.com",
+        "body": "Hi everyone,\n\nI hope you're all doing well! I wanted to organize a team outing next month. Please share your availability for the weekends, and any suggestions for activities would be appreciated!\n\nLooking forward to your responses!\n\nBest,\nMaya",
+        "cc": "",
+        "bcc": "",
+        "from": "maya@example.com",
+        "reply_to": "maya@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "maya@example.com",
+        "body": "Hi Maya,\n\nThanks for initiating the outing! I am available on the second and third weekends of next month. A picnic or a hiking trip sounds great!\n\nBest,\nJames",
+        "cc": "",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Planning",
+        "to": "james@example.com, maya@example.com",
+        "body": "Hi Maya and James,\n\nI love the idea of a picnic! I'm free all weekends, just let me know what works for everyone.\n\nLooking forward to it!\n\nCheers,\nNora",
+        "cc": "",
+        "bcc": "",
+        "from": "nora@example.com",
+        "reply_to": "nora@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Finalizing Team Outing Plans",
+        "to": "james@example.com, nora@example.com",
+        "body": "Excellent! Let's aim for a picnic on the third weekend then. I'll start looking for local parks with good facilities. I'll send out a follow-up email once I have more details.\n\nBest,\nMaya",
+        "cc": "",
+        "bcc": "",
+        "from": "maya@example.com",
+        "reply_to": "maya@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Quarterly Financial Review Schedule",
+        "to": "john@example.com, emily@example.com",
+        "body": "Hi All,\n\nI hope this message finds you well. I'm writing to schedule our Quarterly Financial Review. Please review your availability for the following dates:\n\n- March 10th at 10 AM\n- March 12th at 1 PM\n- March 15th at 3 PM\n\nLooking forward to your feedback.\n\nBest regards,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Financial Review Schedule",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for reaching out! I'm available on March 10th in the morning and March 15th in the afternoon. Let me know which date works best for everyone.\n\nCheers,\nJohn",
+        "cc": "emily@example.com",
+        "bcc": "",
+        "from": "john@example.com",
+        "reply_to": "john@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Financial Review Schedule",
+        "to": "john@example.com, sarah@example.com",
+        "body": "John and Sarah,\n\nI am available on March 10th and March 15th in the afternoon as well. I believe the 10th would be ideal to allow us ample time for preparation.\n\nBest,\nEmily",
+        "cc": "",
+        "bcc": "",
+        "from": "emily@example.com",
+        "reply_to": "emily@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Quarterly Financial Review Schedule",
+        "to": "john@example.com, emily@example.com",
+        "body": "Thanks for the quick replies, John and Emily. I'll go ahead and schedule the Financial Review for March 10th at 10 AM. Calendar invites will be sent shortly.\n\nBest,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Team Outing Confirmation - November 15th",
+        "to": "james@example.com, lucy@example.com",
+        "body": "Hello Team,\n\nI'm excited to confirm our outing scheduled for November 15th! We'll be going to the amusement park for a day of fun and team bonding. Please find the itinerary below:\n\n- Departure: 9 AM from the office\n- Activities: Various rides and games followed by lunch at the park\n- Return: 5 PM back to the office\n\nPlease RSVP by the end of the week so we can finalize the bookings.\n\nBest,\nSarah",
+        "cc": "robert@example.com",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Confirmation - November 15th",
+        "to": "sarah@example.com",
+        "body": "Hi Sarah,\n\nThanks for the info! I'm looking forward to the outing. Can we discuss the carpool arrangements? I may need a ride.\n\nBest,\nJames",
+        "cc": "lucy@example.com",
+        "bcc": "",
+        "from": "james@example.com",
+        "reply_to": "james@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Confirmation - November 15th",
+        "to": "james@example.com, sarah@example.com",
+        "body": "James and Sarah,\n\nI\u2019m in for the outing! However, I will need a ride as well. Maybe we can coordinate transportation together?\n\nLooking forward to it!\n\nBest,\nLucy",
+        "cc": "",
+        "bcc": "",
+        "from": "lucy@example.com",
+        "reply_to": "lucy@example.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Team Outing Confirmation - November 15th",
+        "to": "james@example.com, lucy@example.com",
+        "body": "Great to hear from both of you! Let\u2019s meet up on Friday to discuss carpooling and finalize the plans. I'll send out a calendar invite.\n\nThanks,\nSarah",
+        "cc": "",
+        "bcc": "",
+        "from": "sarah@example.com",
+        "reply_to": "sarah@example.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      }
+    ]
+  },
+  {
+    "messages": [
+      {
+        "subject": "Website Redesign - Client Feedback Session",
+        "to": "sarah@designstudio.com, michael@designstudio.com",
+        "body": "Hi Sarah and Michael,\n\nI just got off the phone with the client regarding the website redesign mockups. Overall, they're very pleased with the direction we're taking. Here are their main points:\n\n1. Love the color scheme and modern layout\n2. Want to see more emphasis on the testimonials section\n3. Request to add a live chat feature\n4. Need the mobile version reviewed by their marketing team\n\nCan we schedule a team meeting for tomorrow afternoon to discuss implementation?\n\nThanks,\nJessica",
+        "cc": "admin@designstudio.com",
+        "bcc": "",
+        "from": "jessica@designstudio.com",
+        "reply_to": "jessica@designstudio.com",
+        "labels": [
+          "INBOX",
+          "IMPORTANT",
+          "CATEGORY_UPDATES"
+        ]
+      },
+      {
+        "subject": "Re: Website Redesign - Client Feedback Session",
+        "to": "jessica@designstudio.com",
+        "body": "Hi Jessica,\n\nGreat news! I'm available tomorrow after 2 PM. For the testimonials section, I'm thinking we could create a rotating carousel with customer photos and quotes. Would that work?\n\nAlso, regarding the live chat feature - do we have a preferred vendor, or should I research options?\n\nBest,\nSarah",
+        "cc": "michael@designstudio.com",
+        "bcc": "",
+        "from": "sarah@designstudio.com",
+        "reply_to": "sarah@designstudio.com",
+        "labels": [
+          "INBOX",
+          "SENT"
+        ]
+      },
+      {
+        "subject": "Re: Website Redesign - Client Feedback Session",
+        "to": "jessica@designstudio.com, sarah@designstudio.com",
+        "body": "Jessica and Sarah,\n\nI can join tomorrow at 2 PM as well. Sarah, the carousel idea sounds perfect - very engaging and modern.\n\nFor the live chat, I've worked with Intercom and Drift in the past. Both are solid options with good integration capabilities. I can put together a quick comparison if that would be helpful.\n\nI'll also have the mobile mockups ready for review by tomorrow morning so we can discuss any adjustments needed.\n\nMichael",
+        "cc": "",
+        "bcc": "",
+        "from": "michael@designstudio.com",
+        "reply_to": "michael@designstudio.com",
+        "labels": [
+          "INBOX"
+        ]
+      },
+      {
+        "subject": "Re: Website Redesign - Client Feedback Session",
+        "to": "sarah@designstudio.com, michael@designstudio.com",
+        "body": "Perfect! Let's meet tomorrow at 2 PM in Conference Room B.\n\nSarah - the carousel sounds excellent. Let's go with that approach.\n\nMichael - yes please on the live chat comparison. That would be super helpful. Also great that you'll have the mobile mockups ready.\n\nI'll send the calendar invite shortly. Looking forward to finalizing this!\n\nJessica",
+        "cc": "admin@designstudio.com",
+        "bcc": "",
+        "from": "jessica@designstudio.com",
+        "reply_to": "jessica@designstudio.com",
+        "labels": [
+          "INBOX",
+          "SENT",
+          "CATEGORY_UPDATES"
+        ]
+      }
+    ]
+  }
+]
