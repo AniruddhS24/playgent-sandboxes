@@ -1,0 +1,17 @@
+type = "job"
+# name = "my-job"
+# workspace = "my-workspace"
+
+# policies = ["na"]
+
+# [env]
+# DEFAULT_CITY = "San Francisco"
+
+# [runtime]
+# memory = 1024
+# maxConcurrentTasks = 10
+# timeout = 900
+# maxRetries=0
+
+[entrypoint]
+prod = ".venv/bin/python3 src/main.py"
