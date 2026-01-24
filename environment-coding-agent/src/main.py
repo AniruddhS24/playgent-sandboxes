@@ -27,7 +27,15 @@ from fastapi import FastAPI, Request, Response, HTTPException
 from fastapi.responses import StreamingResponse
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 from supabase import create_client, Client
-from src.error import init_error_handlers, RecordNotFoundError, KeyPathError, SchemaValidationError
+from src.error import (
+    init_error_handlers,
+    RecordNotFoundError,
+    KeyPathError,
+    SchemaValidationError,
+    GenerationError,
+    ScenarioCollectionError,
+    PlanGenerationError,
+)
 from src.templates import (
     TEMPLATE_STATE_HELPERS,
     TEMPLATE_ACTIONS_INIT,
@@ -408,6 +416,128 @@ def insert_synthetic_data(
     return insert_response.data[0] if insert_response.data else {}
 
 
+# ============================================================================
+# Scenario-Based Data Generation Tools
+# ============================================================================
+
+
+def ask_question(
+    ctx: RunContext[RunDeps],
+    question: str,
+    question_type: Literal["multiple_choice", "short_answer", "yes_no"],
+    options: list[str] | None = None,
+) -> dict:
+    """Ask the user a structured question to gather context for scenario building.
+
+    Use this tool to interview the user and gather details needed to build
+    a high-quality scenario. The turn ends after asking - the user's response
+    comes in the next message.
+
+    Args:
+        question: The question to ask the user
+        question_type: Type of question:
+            - "multiple_choice": Present options for user to choose from
+            - "short_answer": Open-ended text response
+            - "yes_no": Simple yes/no question
+        options: List of options for multiple_choice questions (required for that type)
+
+    Returns:
+        Structured question format for the UI to render
+    """
+    result = {
+        "type": "question",
+        "question": question,
+        "question_type": question_type,
+    }
+
+    if question_type == "multiple_choice":
+        if not options:
+            return {
+                "type": "error",
+                "message": "options are required for multiple_choice questions",
+            }
+        result["options"] = options
+    elif question_type == "yes_no":
+        result["options"] = ["Yes", "No"]
+
+    return result
+
+
+def create_data_pipeline(scenario: str, schemas: list, existing_data: list) -> dict:
+    """Actual generation pipeline - to be implemented externally.
+
+    Args:
+        scenario: Detailed scenario description
+        schemas: Available schemas
+        existing_data: Existing data to avoid duplicates
+
+    Returns:
+        Generation result
+    """
+    # TODO: Connect to actual generation pipeline
+    logger.info(f"Pipeline called with scenario ({len(scenario)} chars): {scenario[:200]}...")
+    return {
+        "status": "pending_implementation",
+        "message": "Pipeline connection to be implemented",
+    }
+
+
+def create_data_from_scenario(
+    ctx: RunContext[RunDeps],
+    scenario: str,
+) -> dict:
+    """Generate synthetic data from a detailed scenario description.
+
+    The scenario should be a comprehensive description of the data environment
+    to set up. The agent builds this from the conversation context after
+    interviewing the user.
+
+    A good scenario includes:
+    - Characters: Names, roles, attitudes
+    - Situation: What's happening, timeline, stakes
+    - Data sources: Specific apps and what data goes where
+    - Relationships: How data pieces connect to each other
+    - Purpose: What task will an agent perform with this data
+
+    Example scenario:
+    "Set up a customer support environment where:
+    - Customer: John Smith, frustrated, hasn't received refund for order #12345
+    - Email thread: 3 messages between John and support agent Sarah
+    - Airtable 'Customers' table: Row for John with order history
+    - The tone is escalating - John is getting more upset each message
+    - An agent will later need to resolve this by creating a Linear ticket"
+
+    Args:
+        scenario: Detailed text description of the data environment to create
+
+    Returns:
+        Status and generated data references
+    """
+    thread_id = ctx.deps.thread_id
+
+    # Fetch all schemas
+    schemas_response = supabase.table('schemas').select('*').execute()
+    schemas = schemas_response.data or []
+
+    # Fetch existing data to avoid duplicates
+    existing_data_response = supabase.table('artificial_data') \
+        .select('*') \
+        .eq('environment_id', thread_id) \
+        .execute()
+    existing_data = existing_data_response.data or []
+
+    # Call the generation pipeline
+    result = create_data_pipeline(scenario, schemas, existing_data)
+
+    return {
+        "status": "generated",
+        "scenario_length": len(scenario),
+        "schemas_available": len(schemas),
+        "existing_records": len(existing_data),
+        "result": result,
+    }
+
+
 def load_thread_history(thread_id: str) -> List[ModelMessage]:
     """Load all messages for a thread, ordered by creation time."""
     response = supabase.table('messages') \
@@ -641,6 +771,9 @@ async def handle_request(request: Request):
                 Tool(update_synthetic_data),
                 Tool(delete_synthetic_data),
                 Tool(reload_actions),
+                # Scenario-based generation tools
+                Tool(ask_question),
+                Tool(create_data_from_scenario),
             ],
         )
 

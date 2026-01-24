@@ -37,6 +37,21 @@ class ActionExecutionError(SyntheticDataError):
     pass
 
 
+class GenerationError(SyntheticDataError):
+    """Raised when synthetic data generation fails."""
+    pass
+
+
+class ScenarioCollectionError(GenerationError):
+    """Raised when there's an issue collecting scenarios."""
+    pass
+
+
+class PlanGenerationError(GenerationError):
+    """Raised when generation plan creation fails."""
+    pass
+
+
 def init_error_handlers(app: FastAPI):
     @app.exception_handler(Exception)
     async def exception_handler(request: Request, e: Exception):
