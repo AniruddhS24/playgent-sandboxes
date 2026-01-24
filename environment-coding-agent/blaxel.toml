@@ -10,3 +10,11 @@ NON_SENSITIVE_ENV = "NON_SENSITIVE_ENV"
 [entrypoint]
 prod = ".venv/bin/python3 -m src"
 dev = ".venv/bin/uvicorn src.main:app --reload --port 1338 --host 0.0.0.0 --loop asyncio"
+
+[[triggers]]
+id = "http"
+type = "http"
+
+[triggers.configuration]
+path = "agents/environment-coding-agent"
+authenticationType = "public"
