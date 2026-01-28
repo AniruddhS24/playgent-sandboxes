@@ -1,8 +1,17 @@
 {
   "tasks": [
     {
-      "scenario": "Enterprise accounts payable invoice discrepancy (duplicate/fee ambiguity). Seed an environment using Gmail + Airtable + Linear. Gmail: Create a thread with 2 emails. Email #1 is from vendor billing (Apex Cloud Services) to Accounts Payable with subject containing an Invoice ID and PO number, and language like “urgent / overdue / pay today”. Body must include: invoice ID, PO number, billed amount, due date, and a short justification for an extra “support fee” line item added after the PO was issued. Email #2 is a terse internal reply from AP/Finance to the vendor stating the invoice may be a duplicate and requesting clarification + remittance details. Airtable: Seed records so there is (a) an existing invoice that could plausibly match (same PO, similar invoice ID/amount, prior month), and (b) a Payments/Remittances-style record showing AP already paid something related (full or partial). Make it ambiguous but solvable. Linear: Provide a “Finance Ops/AP” project/team ready to receive a new issue; do not pre-create the issue",
-      "environment_id": "1537f557-36af-4a10-bc60-df8c0431a359"
+      "environment_id": "f824ea02-1683-4963-8476-630639742bcf",
+      "tasks": [
+        "Do we have enough runway to make it to June?",
+        "Which customers are at risk this month, and what should we do first?",
+        "What's the smallest set of work we can do to hit this quarter's revenue target?",
+        "Why are we missing deadlines—what's the real bottleneck?",
+        "Give me a one-page brief I can send to the board about what happened this month.",
+        "Are we about to surprise anyone—in a bad way?",
+        "I need to cut costs without killing growth. What should we cut?",
+        "What should I personally do next week to maximize impact?"
+      ]
     }
   ]
 }

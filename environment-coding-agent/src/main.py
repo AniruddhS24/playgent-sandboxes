@@ -10,6 +10,7 @@ from typing import Literal, List, AsyncGenerator, Any, Union
 import copy
 
 import httpx
+from blaxel.core.jobs import bl_job
 from blaxel.core import SandboxInstance
 from pydantic_ai import Agent, Tool, RunContext, AgentRunResultEvent
 from pydantic_ai.mcp import MCPServerStreamableHTTP
@@ -19,7 +20,9 @@ from pydantic_ai.messages import (
     FunctionToolCallEvent,
     FunctionToolResultEvent,
     PartDeltaEvent,
+    PartStartEvent,
     TextPartDelta,
+    TextPart,
 )
 from pydantic_core import to_jsonable_python
 from asgi_correlation_id import CorrelationIdMiddleware
@@ -42,6 +45,14 @@ from src.templates import (
     TEMPLATE_GMAIL_ACTIONS,
     TEMPLATE_CUSTOM_ACTIONS,
     TEMPLATE_MCP_SERVER,
+    TEMPLATE_SLACK_ACTIONS,
+    TEMPLATE_JIRA_ACTIONS,
+    TEMPLATE_ASANA_ACTIONS,
+    TEMPLATE_LINEAR_ACTIONS,
+    TEMPLATE_NOTION_ACTIONS,
+    TEMPLATE_GITHUB_ACTIONS,
+    TEMPLATE_SALESFORCE_ACTIONS,
+    TEMPLATE_AIRTABLE_ACTIONS,
 )
 
 supabase: Client = create_client(
@@ -56,6 +67,7 @@ logging.getLogger("mcp.client").setLevel(logging.DEBUG)
 logging.getLogger("pydantic_ai").setLevel(logging.DEBUG)
 
 SYSTEM_PROMPT = open("src/system_prompt.txt", "r").read()
+SCENARIO_PROMPT = open("src/scenario_agent_prompt.txt", "r").read()
 
 
 @dataclass
@@ -162,7 +174,7 @@ def set_nested_value(data: dict, path: List[Union[str, int]], value: Any) -> dic
 
 def fetch_synthetic_data(
     ctx: RunContext[RunDeps],
-    app: Literal["gmail"],
+    app: str,
     search_pattern: str | None = None,
 ) -> list:
     """Fetch data from external database with optional regex filtering.
@@ -313,26 +325,48 @@ async def reload_actions(ctx: RunContext[RunDeps]) -> str:
     return "Actions reloaded successfully. New tools are now available."
 
 
-def fetch_schema(
-    ctx: RunContext[RunDeps],
-    app: str,
-    component_name: str | None = None,
-) -> list:
-    """Fetch the JSON schema for a given app and optional component.
-
-    Args:
-        app: The app to fetch schema for (e.g., "gmail")
-        component_name: Optional component name (e.g., "thread")
+def fetch_schema(ctx: RunContext[RunDeps]) -> list:
+    """Fetch all JSON schemas for the configured connectors in this environment.
 
     Returns:
-        List of schema records matching the query
+        List of schema records for all configured connectors (gmail, airtable, linear, etc.).
+        Returns empty list if environment not found or no connectors configured.
     """
-    query = supabase.table('schemas').select('*').eq("app", app)
+    environment_id = ctx.deps.thread_id
 
-    if component_name:
-        query = query.eq("component_name", component_name)
+    # Fetch environment to get connectors list
+    env_response = supabase.table('environments') \
+        .select('connectors') \
+        .eq('id', environment_id) \
+        .execute()
 
-    response = query.execute()
+    if not env_response.data:
+        logger.warning(f"Environment not found: {environment_id}")
+        return []
+
+    # Parse connectors (may be JSON string or list)
+    connectors_raw = env_response.data[0].get('connectors', [])
+
+    if isinstance(connectors_raw, str):
+        try:
+            connectors = json.loads(connectors_raw)
+        except json.JSONDecodeError:
+            logger.error(f"Invalid connectors JSON: {connectors_raw}")
+            return []
+    else:
+        connectors = connectors_raw
+
+    if not isinstance(connectors, list) or not connectors:
+        logger.warning(f"No connectors configured for environment: {environment_id}")
+        return []
+
+    # Fetch all schemas where app is in the connectors list
+    response = supabase.table('schemas') \
+        .select('*') \
+        .in_('app', connectors) \
+        .execute()
+
+    logger.info(f"Fetched {len(response.data)} schemas for connectors: {connectors}")
     return response.data
 
 
@@ -375,7 +409,8 @@ def insert_synthetic_data(
     """Insert a new record into the artificial_data table.
 
     The json_data must match the schema for the given app/component_name.
-    Use fetch_schema first to see the required structure.
+    Use fetch_schema and fetch_synthetic_data first to see the required structure
+    and existing examples.
 
     Args:
         app: The app name (e.g., "gmail")
@@ -383,11 +418,7 @@ def insert_synthetic_data(
         json_data: The data to insert (must match schema)
 
     Returns:
-        The inserted record
-
-    Raises:
-        SchemaValidationError: If json_data doesn't match the schema
-        ValueError: If no schema found for app/component_name
+        The inserted record, or an error dict with schema and examples if validation fails
     """
     # Fetch the schema
     schema_response = supabase.table('schemas') \
@@ -397,13 +428,32 @@ def insert_synthetic_data(
         .execute()
 
     if not schema_response.data:
-        raise ValueError(f"No schema found for app='{app}', component_name='{component_name}'")
+        return {"error": f"No schema found for app='{app}', component_name='{component_name}'"}
 
     schema_str = schema_response.data[0]["schema"]
     schema = json.loads(schema_str) if isinstance(schema_str, str) else schema_str
 
     # Validate the data against schema
-    validate_against_schema(json_data, schema)
+    try:
+        validate_against_schema(json_data, schema)
+    except SchemaValidationError as e:
+        # Fetch existing data examples to help the agent understand the expected format
+        existing_data = supabase.table('artificial_data') \
+            .select('json_data') \
+            .eq("app", app) \
+            .eq("component_name", component_name) \
+            .eq("environment_id", ctx.deps.thread_id) \
+            .limit(2) \
+            .execute()
+
+        examples = [r["json_data"] for r in existing_data.data] if existing_data.data else []
+
+        return {
+            "error": str(e),
+            "message": "Schema validation failed. Please review the expected schema and examples, then retry with corrected data.",
+            "expected_schema": schema,
+            "existing_examples": examples,
+        }
 
     # Insert the record
     insert_response = supabase.table('artificial_data').insert({
@@ -424,7 +474,7 @@ def insert_synthetic_data(
 def ask_question(
     ctx: RunContext[RunDeps],
     question: str,
-    question_type: Literal["multiple_choice", "short_answer", "yes_no"],
+    question_type: Literal["multiple_choice", "short_answer", "yes_no", "json_upload"],
     options: list[str] | None = None,
 ) -> dict:
     """Ask the user a structured question to gather context for scenario building.
@@ -439,6 +489,7 @@ def ask_question(
             - "multiple_choice": Present options for user to choose from
             - "short_answer": Open-ended text response
             - "yes_no": Simple yes/no question
+            - "json_upload": Expects JSON input (e.g., agentic trace)
         options: List of options for multiple_choice questions (required for that type)
 
     Returns:
@@ -463,7 +514,7 @@ def ask_question(
     return result
 
 
-def create_data_pipeline(scenario: str, schemas: list, existing_data: list) -> dict:
+def create_data_pipeline(scenario: str, environment_id: str) -> dict:
     """Actual generation pipeline - to be implemented externally.
 
     Args:
@@ -474,12 +525,15 @@ def create_data_pipeline(scenario: str, schemas: list, existing_data: list) -> d
     Returns:
         Generation result
     """
-    # TODO: Connect to actual generation pipeline
-    logger.info(f"Pipeline called with scenario ({len(scenario)} chars): {scenario[:200]}...")
-    return {
-        "status": "pending_implementation",
-        "message": "Pipeline connection to be implemented",
-    }
+    job = bl_job("synthetic-data-gen")
+    result = job.run([
+        {
+            "scenario": scenario,
+            "environment_id": environment_id,
+        }
+    ])
+    result = json.loads(result)
+    return {"execution_id": result.get("executionId", None)}
 
 
 def create_data_from_scenario(
@@ -515,35 +569,17 @@ def create_data_from_scenario(
     """
     thread_id = ctx.deps.thread_id
 
-    # Fetch all schemas
-    schemas_response = supabase.table('schemas').select('*').execute()
-    schemas = schemas_response.data or []
+    result = create_data_pipeline(scenario, thread_id)
 
-    # Fetch existing data to avoid duplicates
-    existing_data_response = supabase.table('artificial_data') \
-        .select('*') \
-        .eq('environment_id', thread_id) \
-        .execute()
-    existing_data = existing_data_response.data or []
-
-    # Call the generation pipeline
-    result = create_data_pipeline(scenario, schemas, existing_data)
-
-    return {
-        "status": "generated",
-        "scenario_length": len(scenario),
-        "schemas_available": len(schemas),
-        "existing_records": len(existing_data),
-        "result": result,
-    }
+    return result
 
 
 def load_thread_history(thread_id: str) -> List[ModelMessage]:
-    """Load all messages for a thread, ordered by creation time."""
+    """Load all messages for a thread, ordered by sequence."""
     response = supabase.table('messages') \
         .select('message') \
         .eq('thread_id', thread_id) \
-        .order('created_at', desc=False) \
+        .order('sequence', desc=False) \
         .execute()
 
     all_messages: List[ModelMessage] = []
@@ -560,26 +596,27 @@ def load_thread_history(thread_id: str) -> List[ModelMessage]:
 
 def save_messages(thread_id: str, messages: List[ModelMessage], user_id: str = "") -> None:
     """Save messages to the database (one row per message)."""
+    # Get current max sequence for this thread to preserve message order
+    result = supabase.table('messages') \
+        .select('sequence') \
+        .eq('thread_id', thread_id) \
+        .order('sequence', desc=True) \
+        .limit(1) \
+        .execute()
+
+    start_sequence = (result.data[0]['sequence'] + 1) if result.data else 0
+
     rows = []
-    for msg in messages:
+    for i, msg in enumerate(messages):
         msg_json = to_jsonable_python(msg)
         rows.append({
             'thread_id': thread_id,
             'user_id': user_id,
             'message_kind': msg_json.get('kind', 'unknown'),
-            'message': msg_json
+            'message': msg_json,
+            'sequence': start_sequence + i
         })
     supabase.table('messages').insert(rows).execute()
-
-def generate_nth_kind_number(n: int) -> int:
-    """Gives the nth "kind" number which is a number in a sequence. 
-    
-    Args:
-        query: The value n to generate a kind number for
-    
-    Returns:
-        The value as an integer number"""
-    return 5 * n
 
 
 @asynccontextmanager
@@ -628,30 +665,43 @@ async def bootstrap_sandbox_actions(sandbox_name: str, environment_id: str) -> s
 
     Returns the preview URL for the action MCP server.
     """
+    # Fetch enabled apps for this environment
+    response = supabase.table("environments").select("connectors").eq("id", environment_id).execute()
+    apps = response.data[0]["connectors"] if response.data and response.data[0].get("connectors") else []
+
     sandbox = await SandboxInstance.get(sandbox_name)
 
-    # Write all template files at once using write_tree
+    # Mapping of app names to their template files
+    app_templates = {
+        "gmail": {"path": "actions/gmail.py", "content": TEMPLATE_GMAIL_ACTIONS},
+        "slack": {"path": "actions/slack.py", "content": TEMPLATE_SLACK_ACTIONS},
+        "jira": {"path": "actions/jira.py", "content": TEMPLATE_JIRA_ACTIONS},
+        "asana": {"path": "actions/asana.py", "content": TEMPLATE_ASANA_ACTIONS},
+        "linear": {"path": "actions/linear.py", "content": TEMPLATE_LINEAR_ACTIONS},
+        "notion": {"path": "actions/notion.py", "content": TEMPLATE_NOTION_ACTIONS},
+        "github": {"path": "actions/github.py", "content": TEMPLATE_GITHUB_ACTIONS},
+        "salesforce": {"path": "actions/salesforce.py", "content": TEMPLATE_SALESFORCE_ACTIONS},
+        "airtable": {"path": "actions/airtable.py", "content": TEMPLATE_AIRTABLE_ACTIONS},
+    }
+
+    # Always include base files
     files = [
         {"path": "state_helpers.py", "content": TEMPLATE_STATE_HELPERS},
         {"path": "actions/__init__.py", "content": TEMPLATE_ACTIONS_INIT},
-        {"path": "actions/gmail.py", "content": TEMPLATE_GMAIL_ACTIONS},
         {"path": "actions/custom.py", "content": TEMPLATE_CUSTOM_ACTIONS},
         {"path": "mcp_server.py", "content": TEMPLATE_MCP_SERVER},
     ]
+
+    # Add only enabled app templates
+    for app_name in apps:
+        if app_name in app_templates:
+            files.append(app_templates[app_name])
+
+    # Write config with enabled apps so mcp_server.py knows what to import
+    files.append({"path": "config.json", "content": json.dumps({"apps": apps})})
+
     await sandbox.fs.write_tree(files, "/app")
     logger.info("Wrote all template files to /app")
-
-    # Load any custom actions from Supabase and append to custom.py
-    actions_response = supabase.table('actions').select('*') \
-        .eq("environment_id", environment_id) \
-        .eq("is_preset", False) \
-        .execute()
-
-    if actions_response.data:
-        custom_code = TEMPLATE_CUSTOM_ACTIONS + "\n\n"
-        custom_code += "\n\n".join(a["code"] for a in actions_response.data)
-        await sandbox.fs.write("/app/actions/custom.py", custom_code)
-        logger.info(f"Loaded {len(actions_response.data)} custom actions from Supabase")
 
     # Step 1: Install dependencies
     try:
@@ -736,6 +786,7 @@ async def handle_request(request: Request):
     user_message = body.get("inputs", "")
     thread_id = body.get("thread_id") or str(uuid.uuid4())
     user_id = body.get("user_id", None)
+    mode = body.get("mode", "agent")  # "agent" or "scenario"
 
     if not user_message:
         return {"error": "Please provide an input message", "thread_id": thread_id}
@@ -758,24 +809,36 @@ async def handle_request(request: Request):
             headers={"Authorization": f"Bearer {os.getenv('BLAXEL_API_KEY')}"}
         )
 
-        # Create agent with sandbox MCP as toolset (exposes all sandbox tools)
-        agent = Agent(
-            'anthropic:claude-sonnet-4-0',
-            system_prompt=SYSTEM_PROMPT,
-            deps_type=RunDeps,
-            toolsets=[sandbox_mcp],
-            tools=[
-                Tool(fetch_schema),
-                Tool(fetch_synthetic_data),
-                Tool(insert_synthetic_data),
-                Tool(update_synthetic_data),
-                Tool(delete_synthetic_data),
-                Tool(reload_actions),
-                # Scenario-based generation tools
-                Tool(ask_question),
-                Tool(create_data_from_scenario),
-            ],
-        )
+        # Create agent based on mode
+        if mode == "scenario":
+            # Scenario mode: only question/scenario tools for data generation
+            agent = Agent(
+                'anthropic:claude-sonnet-4-0',
+                system_prompt=SCENARIO_PROMPT,
+                deps_type=RunDeps,
+                tools=[
+                    Tool(ask_question),
+                    Tool(create_data_from_scenario),
+                    Tool(fetch_schema),
+                    Tool(fetch_synthetic_data),
+                ],
+            )
+        else:
+            # Agent mode (default): state management and sandbox tools
+            agent = Agent(
+                'anthropic:claude-sonnet-4-0',
+                system_prompt=SYSTEM_PROMPT,
+                deps_type=RunDeps,
+                toolsets=[sandbox_mcp],
+                tools=[
+                    Tool(fetch_schema),
+                    Tool(fetch_synthetic_data),
+                    Tool(insert_synthetic_data),
+                    Tool(update_synthetic_data),
+                    Tool(delete_synthetic_data),
+                    Tool(reload_actions),
+                ],
+            )
 
         logger.info("Entering agent context manager...")
         async with agent:
@@ -794,7 +857,9 @@ async def handle_request(request: Request):
                     elif isinstance(event, FunctionToolCallEvent):
                         yield f"data: {json.dumps({'event': 'tool_call', 'tool_name': event.part.tool_name, 'args': event.part.args})}\n\n"
                     elif isinstance(event, FunctionToolResultEvent):
-                        yield f"data: {json.dumps({'event': 'tool_result', 'tool_name': event.result.tool_name, 'result': str(event.content)})}\n\n"
+                        yield f"data: {json.dumps({'event': 'tool_result', 'tool_name': event.result.tool_name, 'result': to_jsonable_python(event.result)})}\n\n"
+                    elif isinstance(event, PartStartEvent) and isinstance(event.part, TextPart):
+                        yield f"data: {json.dumps({'text': event.part.content})}\n\n"
                     elif isinstance(event, PartDeltaEvent) and isinstance(event.delta, TextPartDelta):
                         yield f"data: {json.dumps({'text': event.delta.content_delta})}\n\n"
 
@@ -870,6 +935,21 @@ async def reset_state(environment_id: str):
 
     return {"message": "Environment state reset", "deleted_count": len(response.data)}
 
+
+@app.post("/environment/{environment_id}/trajectory")
+async def insert_trajectory(environment_id: str, request: Request):
+    """Insert trajectory data into the trajectories table."""
+    body = await request.json()
+
+    response = supabase.table('trajectories').insert({
+        'environment_id': environment_id,
+        'trajectory': body,
+    }).execute()
+
+    if not response.data:
+        raise HTTPException(status_code=500, detail="Failed to insert trajectory")
+
+    return {"status": "success", "trajectory": response.data[0]}
 
 @app.post("/environment/{environment_id}/action/{action_name}")
 async def execute_action(environment_id: str, action_name: str, request: Request):
@@ -969,6 +1049,17 @@ async def get_action_mcp_url(environment_id: str):
     preview = await sandbox.previews.get("action-mcp")
     return {"mcp_url": f"{preview.spec.url}/mcp"}
 
+
+@app.get("/job/{job_name}/execution/{execution_id}")
+async def get_job_status(job_name: str, execution_id: str):
+    """Get the status of a job execution."""
+
+    job = bl_job("synthetic-data-gen")
+    try:
+        status = await job.aget_execution_status(execution_id)
+        return {"status": status, "execution_id": execution_id}
+    except Exception as e:
+        return {"status": "error", "error": str(e), "execution_id": execution_id}
 
 
 FastAPIInstrumentor.instrument_app(app, exclude_spans=["receive", "send"])

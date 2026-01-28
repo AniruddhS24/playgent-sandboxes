@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 import importlib
 
 # Add app directory to path
@@ -16,8 +17,13 @@ mcp = FastMCP(
     port=int(os.environ.get("PORT", "9000"))
 )
 
-# Import action modules to trigger registration
-for module in ['gmail', 'custom']:
+# Load enabled apps from config
+with open('/app/config.json') as f:
+    config = json.load(f)
+enabled_apps = config.get('apps', [])
+
+# Import action modules to trigger registration (custom is always included)
+for module in enabled_apps + ['custom']:
     try:
         importlib.import_module(f'actions.{module}')
         print(f"Successfully imported actions.{module}")
